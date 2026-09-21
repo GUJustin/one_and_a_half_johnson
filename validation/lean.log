@@ -1,0 +1,720 @@
+⚠ [1207/1609] Replayed ArkLib.Data.Fin.Basic
+warning: ArkLib/Data/Fin/Basic.lean:327:4: declaration uses `sorry`
+✔ [3959/3972] Built OneAndAHalfJohnson.Targets.Main (2.1s)
+✔ [3962/3972] Built OneAndAHalfJohnson.WeightLayerBounds (2.2s)
+✔ [3963/3972] Built OneAndAHalfJohnson.ConcreteConstruction (2.4s)
+✔ [3964/3972] Built OneAndAHalfJohnson.ConcreteProbabilityCalculus (2.5s)
+✔ [3965/3972] Built OneAndAHalfJohnson.ConcreteLayerDerivative (2.9s)
+✔ [3966/3972] Built OneAndAHalfJohnson.ConcreteLayerCounting (2.8s)
+✔ [3967/3972] Built OneAndAHalfJohnson.ConcreteTailEnvelopes (3.1s)
+✔ [3968/3972] Built OneAndAHalfJohnson.ConcreteFailureSums (1.9s)
+✔ [3969/3972] Built OneAndAHalfJohnson.ConcreteSampling (2.6s)
+✔ [3970/3972] Built OneAndAHalfJohnson.MainTheorems.Concrete (1.8s)
+✔ [3971/3972] Built OneAndAHalfJohnson (1.7s)
+Build completed successfully (3972 jobs).
+
+'OneAndAHalfJohnson.relativeWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.relativeWeight_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.far_image_of_uniform_amplification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.close_image_of_uniform_amplification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exceptional_count_image_of_uniform_amplification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.injective_on_code_of_uniform_amplification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.exists_minimum_weight_word' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.relativeDistance_le_relativeWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.image_distance_of_uniform_amplification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.image_distance_bounds_of_uniform_amplification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Close.exists_relativeWeight_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplified_image_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_relative_nearMDS_completion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.tendsto_amplify_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_distance_overshoot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.tendsto_amplify_floor_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_left_positive_of_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplificationScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplificationScale_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplificationScale_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_amplification_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplificationSizeConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.family_card_le_exp_of_dimension_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.hoeffding_union_lt_one_of_polynomial_length' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.amplificationSizeConstant_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_polynomial_hoeffding_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplify_mem_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplification_error_le_add_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.asymptotic_code_at_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_final_size_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.codimTwo_card_lt_syndrome_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.syndrome_card_le_four_mul_count_mul_qpow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.codimTwo_card_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.BaseConstruction.pair_span_kernel_exclusion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.BaseConstruction.surjective_restriction_of_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.BaseConstruction.exists_unused_slope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.BaseConstruction.singleton_syndrome_ne_vertical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.BaseConstruction.singleton_syndrome_ne_affine' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.BaseConstruction.card_exceptional_ge_of_offset_slopes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.BaseConstruction.extended_small_word_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.BaseConstruction.extended_small_word_singleton' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.BaseWeightBounds.parameter_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.BaseWeightBounds.cleared_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.BaseWeightBounds.normalized_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.BaseWeightBounds.normalized_unit_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Close' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Far' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exceptional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.relativeDistance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.johnson' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.gamma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplify' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Close.mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Far.not_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.mem_exceptional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exceptional_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.bernoulliKL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.bernoulliTilt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.bernoulli_tilt_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.bernoulliTilt_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.bernoulliTilt_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.integrable_exp_mul_of_zero_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.mgf_of_zero_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.mgf_sum_zero_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.bernoulli_sum_lower_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.bernoulli_sum_upper_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.card_hamming_ball_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_code_completion_of_weight_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_code_completion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.code_distance_gt_of_nonzero_weights' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.code_distance_le_of_nonzero_word' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.syndrome_kernel_distance_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.syndrome_nonzero_of_pair_span_classification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.syndrome_kernel_distance_gt_of_pair_span_classification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.completion_cardinality_of_defect_power' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.singletonDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.singletonDefect_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_completion_defect_eq_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_completion_defect_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.rate_eq_one_sub_distance_add_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.rate_error_le_of_defect_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.completion_defect_power_of_exponent_bound' depends on axioms: [propext]
+'OneAndAHalfJohnson.concrete_completion_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.concrete_completion_defect_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.asymptoticCompletionDefect' does not depend on any axioms
+'OneAndAHalfJohnson.asymptoticCompletionDefect_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.asymptoticCompletionDefect_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.asymptoticCompletionDefect_rate_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_completion_rate_error_le_six_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.rowProbability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.mul_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.square_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_e' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_wstar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_d0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_d1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_W' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.raw_length' depends on axioms: [propext]
+'OneAndAHalfJohnson.ConcreteArithmetic.incidence_weight' depends on axioms: [propext]
+'OneAndAHalfJohnson.ConcreteArithmetic.distance_cutoffs' depends on axioms: [propext]
+'OneAndAHalfJohnson.ConcreteArithmetic.incidence_count' depends on axioms: [propext]
+'OneAndAHalfJohnson.ConcreteArithmetic.exceptional_count_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.unused_directions_cardinality' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.syndrome_union_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.integral_coset_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.completion_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.shortening_transition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.completion_room' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.completion_rate_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.rate_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.radius_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.coset_completion_separation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteArithmetic.hamada_matrix_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.concrete_base_of_AD21_Hamada' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_concrete_completion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.concrete_code_of_sampled_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.concrete_code_consequences' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_alpha_d0' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_beta_wstar' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_alpha_W' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_beta_W' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_tau_e' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_delta_d1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.count_d0_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.count_wstar_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.count_global_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.log_q_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.survival_W_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.finite_field_correction_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.derivative_envelope_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.derivative_alpha_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.derivative_beta_first_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.derivative_beta_second_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.log_derivative_alpha_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.log_derivative_beta_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.log_exceptional_count_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_d0_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_wstar_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.coarse_failure_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.family_tail_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.nonzeroCodeWords' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.nonzeroCodeWords_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.nonzeroCodeWords_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.field_power_as_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.global_tail_of_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.affineCodeWords_min_of_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.concrete_family_failure_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.concrete_nonzero_failure_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.concrete_affine_failure_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.concrete_choose_le_exp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.layer_tail_of_exponent_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.layer_tail_of_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.rowSlope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.layerExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.hasDerivAt_layerExponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.alpha_d0_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.alpha_d0_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.beta_wstar_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.beta_wstar_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.alpha_W_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.alpha_W_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.beta_W_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.beta_W_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.tau_e_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.tau_e_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.delta_d1_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.delta_d1_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.count_d0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.count_wstar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteLogBounds.log_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.hasDerivAt_bernoulliKL' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.hasDerivAt_rowProbability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.rowProbability_monotone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.rowProbability_mem_Ioo' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.bernoulliKL_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.global_alpha_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.global_beta_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.bernoulliKL_antitone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.short_word_upper_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.incidence_upper_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.sampledMean_concrete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_concrete_sampling_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_concrete_separating_syndrome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.finrank_inter_ker_of_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.concrete_kernel_finrank_of_Hamada' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.slope_div_survival' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_gain_of_correction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_slope_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.layerExponent_antitone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.layer_alpha_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.ConcreteAnalyticBounds.layer_beta_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.reindexWord' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.reindexCode' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.reindexWord_dist' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.mem_reindexCode' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.reindexCode_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.reindexCode_far' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.reindexCode_exceptional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.reindexCode_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.reindexCode_relativeDistance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.reindexCode_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.gcd_extension_exponents' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.gcd_extension_field_size' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.gcd_extension_degree_le' depends on axioms: [propext]
+'OneAndAHalfJohnson.gcd_base_dimension_ge' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.gcd_extension_degree_pos' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.SizedExtension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sizedExtensionAlgebra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sizedExtensionFiniteDimensional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sizedExtension_finrank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sizedExtension_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sizedExtension_card_output_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_sized_field_tower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sizedExtension_finrank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.polynomial_dimension_bound_in_exponent' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.extended_incidence_dimension_bound_in_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.extended_incidence_card_bound_in_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.exists_functional_nonzero_on_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.independent_pairs_of_distinct_slopes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_finite_separating_syndrome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.Point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.pointFintype' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.CodimTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.Incident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incident_iff_rep_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incident_mk_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceWord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceWord_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceWord_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.support_incidenceWord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceSpan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceWord_mem_span' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.point_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.point_card_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidentEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incident_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incident_inf_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.overlap_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidence_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.intersection_finrank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.overlap_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.TwoSubspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.TwoFrame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.frame_span_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.frameInSubspaceToFrame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.frameInSubspaceToFrame_bijective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.twoFrame_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.twoSubspace_card_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.codimTwoEquivDualTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.codimTwo_card_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.codimTwo_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.codimTwo_card_512_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.seven_overlap_lt_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidence_rows_independent_of_card_le_eight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceWord_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.pair_eq_of_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.geometric_six_rows_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.geometric_overlapping_pairs_impossible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.shortening_word_sparse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.shortening_contained_in_two_incidence_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.geometric_pair_impossible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.shortening_word_single' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.shortening_contained_in_one_incidence_row' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.incidence_span_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.codimTwo_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidence_arithmetic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.cutoff_add_three_overlap_lt_three_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.four_weight_lt_six_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.four_weight_le_three_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.coordinateKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.mem_coordinateKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.finrank_coordinateKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.coordinateKernel_inf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleMask' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleExcluded' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleExcluded_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleExcluded_union_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleExcluded_union_three_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleSpace_le_common_hyperplane' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.triple_common_hyperplane_finrank' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleSpace_pair_finrank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleSpace_triple_finrank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.tripleSpace_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.triplePoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.triplePoints_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.triplePoints_pair_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.triplePoints_triple_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.triplePoints_union_card_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.triplePoints_union_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.triplePoints_union_card_lt_three_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.triplePoints_union_card_512_five' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.linearIndependent_of_private_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_private_point_of_overlap_sum_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.incidence_linearIndependent_of_overlap_sum_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.exists_two_functionals_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.affineCoordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.affineCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.affineCoordinateSpan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.affineCoordinates_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.one_mem_affineCoordinateSpan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.linearFunctional_mem_affineCoordinateSpan' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.finrank_affineCoordinateSpan_pow_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.finiteField_zero_indicator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceWord_eq_two_zero_tests' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceWord_mem_affineCoordinateSpan_pow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceSpan_finrank_le_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.extendCode_incidenceSpan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceSpan_base_finrank_le_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.extended_incidenceSpan_finrank_le_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.prime_incidenceSpan_finrank_le_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.exists_kernel_word_of_three_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.exists_small_incidence_kernel_word' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidence_kernel_distance_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.exists_incidence_kernel_word_512_five' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.embed_incidenceWord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.incidenceWord_mem_extendCode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Geometry.exists_small_extended_incidence_kernel_word' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Geometry.extended_incidence_kernel_distance_lt_three_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.sum_by_weight_layers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sum_le_of_weight_layer_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.point_base_of_AD21' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.smallDistanceBase_of_AD21' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.concreteTheorem_of_AD21_Hamada' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.conditionalConcreteTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.asymptoticConclusion_of_AD21' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.mainTheorem_of_AD21' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.conditionalMainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.uniqueDecodingCounterexamples_of_AD21' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.actual_unique_radius_of_AD21' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.shorteningStructure_of_AD21' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.exists_ambient_syndrome_first_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.syndromeSeparation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.NumericLogCertificates.exp_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.NumericLogCertificates.exp_double_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.exists_uniform_finite_samples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sampled_row_success_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_sampled_uniform_amplification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_linear_uniform_amplification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.dual_evaluation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.dual_evaluation_fibers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.dual_evaluation_zero_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.dual_evaluation_nonzero_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SamplingRow' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.sampledLinearMap' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.sampled_tuple_zero_iff' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.zero_tuple_sample_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sampledDualFintype' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sampled_row_nonzero_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_bernoulli_family_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_finite_sample_family_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sampledMean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_linear_refined_amplification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.embedWord' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.extendCode' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.supportedCode' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.coefficient_mem_base' depends on axioms: [propext, Quot.sound]
+'OneAndAHalfJohnson.extendCode_inf_supported' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.finrank_extendCode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.extendCode_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.extendCode_span' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.shortened_extendCode_le_span' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.shortened_extendCode_le_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.shortened_extendCode_le_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.three_sets_card_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.three_sets_sdiff_subset_of_overlapping_pairs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.overlapping_pairs_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.overlapping_pairs_impossible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sparse_representation_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.three_or_four_rows_not_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.sparse_pair_must_overlap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_common_sparse_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.two_sets_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_common_single_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_dense_translate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_dense_subfield_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_dense_subfield_line_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Far.smul_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.far_smul_nonzero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.zero_not_mem_exceptional_of_far' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_subfield_exceptional_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_monic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_eval_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_natDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.QPowerSupport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.natDegree_sub_le_of_top_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.subspace_eq_of_top_two_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.geometry_card_cast_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_lagrange_denominator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.sum_eval_eq_linear_coeff_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.moment_lt_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.moment_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.moment_middle_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.moment_high_eq_neg_coeff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_tail_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.moment_card_sub_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.moment_two_card_sub_qpow_sub_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_distinguished_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_separable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_coeff_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_coeff_one_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.qPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.qPolynomial_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.qPolynomial_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.qPolynomial_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.qPolynomial_natDegree_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.qEvaluation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.qEvaluation_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.basisEvaluation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.exists_nonzero_annihilator_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_qPowerSupport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.qPowerSupport_two_ext' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SubspacePolynomial.rootProduct_top_two_determine_subspace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.exists_avoiding_supercode_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_avoiding_supercode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_avoiding_supercode_of_pow_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.hammingDist_sub_eq_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.close_of_equal_syndrome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.close_of_normalized_syndrome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.card_exceptional_ge_of_syndromes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.far_of_syndrome_exclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.mem_line_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.lineSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.incidence_lineSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.weightedSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.momentFunctional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.momentFunctional_incidence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.exponentZero' depends on axioms: [propext]
+'OneAndAHalfJohnson.SyndromeConstruction.exponentOne' depends on axioms: [propext]
+'OneAndAHalfJohnson.SyndromeConstruction.exponentTwo' depends on axioms: [propext]
+'OneAndAHalfJohnson.SyndromeConstruction.exponents_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.syndromeMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.syndromeMap_incidence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.affine_coefficients_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.independent_scaled_affine_pairs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.syndromeMap_incidence_fst_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.syndromeMap_incidence_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.syndromeMap_incidence_pair_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.SyndromeConstruction.exists_separating_syndrome_of_tower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.hammingNorm_smul_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.syndrome_normalize' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.card_exceptional_ge_of_syndrome_slopes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.slopes_injective_of_pairwise_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.card_exceptional_ge_of_independent_syndromes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.Targets.baseLength' depends on axioms: [propext]
+'OneAndAHalfJohnson.Targets.incidenceWeight' depends on axioms: [propext]
+'OneAndAHalfJohnson.Targets.SmallDistanceBase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.ShorteningStructure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.extendedIncidence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.SyndromeSeparation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.ConditionalMainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.ConditionalSmallDistanceBase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.ConditionalShorteningStructure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.ConditionalConcreteTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.uniqueDecoding_of_main' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.lowWeightCutoff' depends on axioms: [propext]
+'OneAndAHalfJohnson.Targets.AD21LowWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.HamadaBinaryRank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.AsymptoticConclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.MainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.UniqueDecodingCounterexamples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.Targets.ConcreteTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.johnson_lt_gamma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.gamma_lt_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplify_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.amplify_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.johnson_lt_half_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.concrete_johnson_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.johnson_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.measure_abs_gt_le_of_subgaussian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.measure_average_deviation_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.exists_uniform_average_concentration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.choose_le_exp_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.supported_family_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.weight_layer_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.affineCodeWords' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.affineCodeWords_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.affineCodeWords_separated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.affineCodeWords_layer_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]

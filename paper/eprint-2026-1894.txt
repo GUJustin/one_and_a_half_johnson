@@ -1,0 +1,1174 @@
+The One-and-a-Half Johnson Bound Is Tight for Proximity Gaps of
+General Linear Codes
+Scott Duke Kominers ∗ Justin Thaler † Kai Zhe Zheng ‡
+August 2026
+Abstract
+For a linear codeC⊆F n
+q, we say thatC satisfies theproximity-gaps propertyup to distance
+δ1 if, for everyδ2 > δ1 and everyf,g∈F n
+q, at least one of which isδ2-far fromC in relative
+Hamming distance, there are only a small fraction (typically at mostpoly(n)/q) ofexceptional
+coefficientsz∈F q for whichf +zg is δ1-close toC. The work [BGKS20] shows that every linear
+code of relative distanceδsatisfies proximity gaps up to the one-and-a-half Johnson radius
+J3/2(δ) = 1−(1−δ) 1/3.
+We prove that this threshold is tight, at every distance0< δ <1, for general linear codes.
+Specifically, for every0<δ < 1, we construct a linear code of relative distance arbitrarily close to
+δ and wordsf,g which are both
+(
+1−(1−δ) 4/9)
+-far from the code, but have a constant fraction
+of coefficientsz for whichf +zg is nearlyJ3/2(δ)-close to the code. Our counterexamples still
+hold even if one allows a fixed amount of distance-dependent slack.
+1 Introduction
+Many code-based interactive oracle proofs and SNARKs require simultaneously testing the proximity
+of several words to a fixed linear code. That is, given wordsu0,...,u h−1∈F n
+q and a linear code
+C⊆F n
+q, one wants to test whether eachui∈C , or if at least oneui is far fromC. To avoid running
+h separate proximity tests, a common approach is to randomly sample coefficientsγ0,...,γ h−1 and
+instead test a single linear combination
+u⋆ :=
+h−1∑
+i=0
+γiui.
+In order for this strategy to be sound, however, one needs the following guarantee, called the
+proximity-gaps property. It says that if at least oneui is far fromC, the random linear combination
+is still (nearly) just as far fromCwith high probability.
+∗Harvard University and a16z crypto research
+†Georgetown University and a16z crypto research
+‡MIT
+The authors used LLMs to assist with analysis and synthesis in the preparation of this article, in particular GPT-5.6
+Sol. The model initially produced one concrete counterexample which the authors generalized to the family of
+counterexamples.
+1
+Moreformally, wesaythatthecode C⊆F n
+q hastheproximity-gapspropertyuptoradius ρ∈ [0, 1]
+with slackη∈ [0, 1]and error err if, for everyf,g∈F n
+q satisfying max{δ(f,C ),δ (g,C )}>ρ +η, the
+set
+Zρ(f,g;C) :={z∈F q|δ(f+zg,C)≤ρ}
+has size at mosterr·q . Typically, err should be small enough thaterr·q grows at most polynomially
+inn(ideally linearly inn). In general,errshould be bounded above by the target soundness error
+of the resulting proof system. Hereδ(·,· )denotes the relative Hamming distance, andδ(v,C )for a
+wordvand codeCis the smallest relative Hamming distance betweenvand any codeword inC.
+We study the limitations of the proximity-gaps property for general linear codes. It has long
+been known [BGKS20] that every linear codeC of relative distanceδ satisfies the proximity-gaps
+property at any radius below
+J3/2(δ) := 1−(1−δ) 1/3.
+This distance is often called the one-and-a-half Johnson radius and despite much attention, it still
+stands as the best known radius for the proximity-gaps property of general linear codes (and, as
+we show in this paper, there is a good reason for this). On the other hand, certain families of
+codes are known to satisfy much stronger proximity-gaps properties. Reed–Solomon codes have the
+proximity-gaps property up to the Johnson radius1− (1−δ )1/2, rather than only the one-and-a-half
+Johnson radius [BCI+23,BCH +25], while random linear codes, folded Reed-Solomon codes, and
+random Reed-Solomon codes have the proximity-gaps property all the way up to capacity, i.e., radius
+1−R for a code of rateR (asymptotically equal toδ for Reed–Solomon codes) [GG25,GGSW26].
+The stronger proximity-gaps property of Reed–Solomon codes, along with their optimal rate–distance
+tradeoff, are the main reason that Reed–Solomon codes are the predominant choice in hash-based
+SNARKs [BBHR18,ACFY24,ACFY25]. At a high level, these properties allow Reed–Solomon-based
+SNARKs to achieve the smallest proof sizes among hash-based SNARKs.
+On the other hand, several works have proposed hash-based proof systems based on other
+linear codes in order to obtain desirable properties such as faster encoding or the ability to work
+over different fields [GLS+23,XZS22,BCF +25,ZCF24,AGK +26]. According to existing analyses,
+however, the proximity tests in these proof systems are limited to the one-and-a-half Johnson radius
+leading to larger proof sizes compared to proof systems using Reed-Solomon codes. Many authors
+have thus considered the possibility that broader classes of linear codes might satisfy stronger,
+Reed–Solomon-like proximity gaps.1 In particular, Diamond and Gruen [DG24] conjectured that
+every linear code of relative distanceδ satisfies proximity gaps up to its unique-decoding radiusδ/2.
+We show in this paper that the one-and-a-half Johnson bound is tight for general linear codes;
+since for every0<δ < 3−
+√
+5 our counterexamples exhibit failures at radii betweenJ3/2(δ)and
+δ/2, this disproves the Diamond–Gruen conjecture. We discuss these two contributions in more
+detail below.
+1.1 Main results
+For a linear codeC, writeδ(C)andR(C)for its relative distance and rate. We define
+Γ(δ) := 1−(1−δ) 4/9.
+Note that for every0<δ <1,
+J3/2(δ)<Γ(δ)<δ.
+1In fact, some proof systems have implicitly conjectured within their security analyses that general linear codes
+satisfy proximity gaps all the way up to the Johnson bound or even beyond [XZS22].
+2
+For everyδ∈ (0, 1)and every ρ∈ (J3/2(δ), Γ(δ)), we construct codes of relative distance arbitrarily
+close toδ and wordsf,g at distance greater thanΓ(δ)from the code, with many linear combinations
+that areρ-close to the code. This family of codes shows that the one-and-a-half Johnson bound
+is tight for proximity gaps of general linear codes. Table 1 compares these thresholds with the
+unique-decoding and Johnson radii at several representative values ofδ.
+δ J(δ)δ/2J 3/2(δ) Γ(δ)
+0.10 0.0513 0.0500 0.0345 0.0457
+0.25 0.1340 0.1250 0.0914 0.1200
+0.50 0.2929 0.2500 0.2063 0.2651
+0.75 0.5000 0.3750 0.3700 0.4600
+3−
+√
+5≈0.764 0.5141 0.3820 0.3820 0.4736
+7/8 0.6464 0.4375 0.5000 0.6031
+Table 1: Representative values of the unique-decoding radiusδ/2, the one-and-a-half Johnson radius
+J3/2(δ), the defining-vector thresholdΓ(δ), and the Johnson radiusJ(δ) := 1−
+√
+1−δ.
+Theorem 1.1.For every primep, every0 <δ < 1, everyρ∈ (J3/2(δ), Γ(δ))and every η >0, there
+are constantsA,c> 0, an integerD≥ 1, and an integers0≥ 1, depending only onp,δ,ρ,η , with
+the following property. For everys≥s 0, setq:=p s. For every block lengthNsatisfying
+AsD≤N <q,
+there are a linear codeC⊆FN
+q and vectorsf,g∈F N
+q with the following properties.
+•Code parameters.
+|δ(C)−δ|<η, R(C) = 1−δ(C) +O p,δ,ρ,η(1/s).
+•Distance of the defining vectors.
+δ(f,C),δ(g,C)>Γ(δ).
+•Exceptional coefficients.
+|Zρ(f,g;C)|≥cq.
+ThusC fails the proximity-gaps property at radiusρ, with every slackσ <Γ(δ)−ρ and every
+error bound err<c . Of particular interest is the setting of Theorem 1.1 in which the one-and-a-half
+Johnson radius lies below the unique-decoding radius. This is especially interesting because several
+authors had conjectured that the proximity-gaps property should hold up to the unique-decoding
+radius; for example, this conjecture is stated explicitly in [DG24]. Our results show that this is not
+the case.
+Corollary 1.2.For every0<δ <3−
+√
+5and everyρsatisfying
+J3/2(δ)<ρ<min
+{
+Γ(δ), δ
+2
+}
+,
+the conclusions of Theorem 1.1 hold and hence there exists linear codes which do not satisfy the
+proximity-gaps property all the way up to the unique-decoding radius.
+3
+Finally, in Section 4 we give a concrete instantiation with block length236 over the fieldF2128,
+relative distance between0.4419and0 .4511, rate between0.5410875and0 .5502875, counterexample
+words that are at least0.22945far from the code, and more than254 exceptional coefficients at
+radius0 .1816. Thus the number of exceptional coefficients exceeds the block length by a factor
+greater than2 18, and the exceptional radius lies inside the unique-decoding radius. This example is
+included to illustrate that the counterexamples do not require exorbitant field sizes or block lengths,
+nor vanishing distances or rates. Specifically, our concrete instantiation is at a parameter setting
+which is reasonable in hash-based SNARKs.
+1.2 Technical overview
+Here we give a high level overview of our counterexample construction. We roughly proceed in two
+steps, starting with a small-distance base construction and then amplifying distance using standard
+probabilistic techniques to obtain counterexamples at all distances. The bulk of our work goes
+towards the first step.
+The small-distance base construction.Fix a small constant x > 0. We first construct
+a counterexample code with small relative distance3x > 0. At this scale, J3/2(3x)≈x and
+Γ(3x)≈ 4x/3. Towards our construction, we use a finite field of sizeQ = pa. There are some
+requirements to thisQ, but they are not important for the overview, so we ignore them for now.
+Consider the spaceFm
+Q for some dimensionm and letX denote the set of lines inFm
+Q. We start by
+constructing a code
+D⊆F X
+p
+which is indexed by the set of linesX in Fm
+Q. The code D is constructed as follows. For each
+codimension two subspaceW⊆F m
+Q, we letuW∈F X
+p be its incidence vector. That is, for a line
+ℓ∈X,
+(uW )ℓ :=
+{
+1ifℓ⊆W,
+0otherwise.
+Then we define
+D:= span Fp(uW :W⊆F m
+Q codimension two).
+The motivation for considering thisD is that we have a good understanding of its small weight
+codewords. More specifically, using results of Adriaensen and Denaux [AD21] we can obtain the
+following two useful properties. First, every word of relative weight at most about3x lies in the span
+of at most two incidence vectors,uW,uW′. Second, every word of relative weight at most about
+4x/3lies in the span of a single incidence vector. Thus, althoughD may have large dimension, its
+sufficiently low-weight words have a very simple structure.
+We exploit this structure to obtain both our final codeC and the two wordsf,g∈span Fq(D)
+giving the counterexample by imposing two linear parity checks. Specifically, we look for a linear
+map
+Ψ : spanFq(D)→F 2
+q
+where Fq is a sufficiently large extension ofFQ and defineC := ker(Ψ). Here C is a subcode of
+spanFq(D), i.e. the extension ofD to an Fq code. We constructΨso that the incidence vectorsuW
+have pairwise linearly independent syndromesΨ(uW ). That is, no twoW,W′⊆F m
+Q of codimension
+two haveΨ(uW )andΨ( uW′)that are scalar multiples of each other. Finding thisΨ, combined with
+our understanding of low weight words inD, essentially gives all of the properties we need.
+4
+• Distance:The distance of C is at least3x, because any nonzero word of relative weight at
+most about3x in spanFq(D)would have to be a linear combination of at most two incidence
+vectors, but no such combination can have zero syndrome due to the linear independence of
+the incidence syndromes.
+• Counterexample f,g∈F X
+q :By a straightforward counting argument there exist words
+f,g∈span Fq(D)whose syndromes are not scalar multiples of any incidence vector syndrome.
+This ensures thatδ(f,C ),δ (g,C )> 4x/3because any word of relative weight at most about
+4x/3in spanFq(D)must be a multiple of a single incidence vector, and hence cannot have a
+syndrome that is a scalar multiple ofΨ(f)orΨ(g).
+• Exceptional Coefficients:Note thatΨ( f), Ψ(g)are linearly independent. Then we can
+show that eachz such thatΨ(f) +zΨ(g)is a scalar multiple of someΨ(uW )is an exceptional
+coefficient wheref +zg is x-close toC. Indeed, if for suchz we get that there is someαuW
+such thatf+zg−αu W∈C, and therefore
+δ(f+zg,C)≤ wt(uW )
+|X| ≈x.
+Moreover eachuW gives a distinct exceptional coefficient, so we have many of them by counting
+the number of codimension two subspacesW⊆F m
+Q. In particular, we have at leastΩ(Q2m)
+of them. Ultimately we arrangeΩ(Q2m) = Ω(q)yielding a constant fraction of exceptional
+coefficients in the final fieldFq of the codeC.
+Amplifying to all distances.After we obtain a small distance counterexample, we amplify to
+obtain codes of all distances. Our amplification procedure also reduces the field size and it works in
+a straightforward way. We first choose a subfieldFq′⊆F q such thatq = (q′)r for some constantr,
+and view each symbol ofFq as anr-dimensional vector overFq′. It is straightforward to transform
+f,g into words overFq′ which still have many exceptional coefficients inFq′, so the remaining issue is
+to amplify the distance. We then define an amplified code as follows. For each coordinate of the new
+code, we choose a randomt-tuple of coordinates of the original word and apply a randomFq′-linear
+map from the correspondingt symbols in Fq to a single symbol inFq′ (so r·t symbols are being
+combined). This defines a new code overFq′. If an original word has relative weighta, then a new
+coordinate is nonzero with probability approximately1− (1−a )t. Hence, by standard concentration
+arguments, the relevant distances are amplified according to this transformationa→ 1− (1−a )t.
+Choosing t appropriately sends the three base distancesx,4 x/3, and3x to values close to their
+target valuesJ3/2(δ),Γ( δ), andδ, respectively. We also include one enlargement step to improve
+the rate of our code to nearly-MDS. This step is also done relatively straightforwardly.
+1.3 Comparison with prior work on counterexamples
+The work [BGKS20] gives a proximity-gaps counterexample at(δ,ρ ) = (7 /8, 1/2). That is, a
+code with distance7/8that does not satisfy the proximity-gaps property for any radius above
+J3/2(7/8) = 1 /2. This gives one distance δ where the one-and-a-half Johnson radius is tight,
+but [BGKS20] does not give any counterexamples at other distances. Diamond and Gruen [DG24]
+constructed a Reed–Solomon example at the unique-decoding radius with exactlyn exceptional
+coefficients. The presumed tightness of this example (not only among Reed-Solomon codes but also
+amongst all linear codes) is what motivated their conjecture that all linear codes satisfy proximity
+gaps up to their unique-decoding radius, with at mostnexceptional coefficients.
+5
+ForthespecialclassofReed–Solomoncodes, anumberofrecentworkshavegivencounterexamples
+at various distances, but the distances of these counterexamples are near capacity [DG25,Kam26,
+KKH26]. Their intention is to show the limits of the recent Grand MCA Challenge [ABF26]
+which conjectures that Reed–Solomon codes satisfy proximity gaps all the way up to capacity (or
+equivalently, up to their distanceδ).
+Our work is orthogonal to this line of research on Reed–Solomon counterexamples as we focus
+on general linear codes.
+1.4 Organization
+In Section 2 we describe preliminary notation and basic facts. Section 3 gives the proof of our main
+theorem. Section 4 gives a concrete instantiation within a parameter regime that is commonly
+used in hash-based SNARKs. The sole purpose of this last section is to demonstrate that such
+counterexamples do not require large field sizes or other extreme parameter choices.
+2 Preliminaries
+We collect the notation and basic facts used throughout the construction. For a positive integern,
+write[ n] :={1,...,n} . Forx∈F n
+q, let wt(x)and supp(x)denote its Hamming weight and support.
+For a linear subspaceH≤F n
+q, writesupp(H) := ⋃
+h∈H supp(h). For a linear codeC⊆F n
+q, set
+d(C) := min
+0̸=c∈C
+wt(c), δ(C) := d(C)
+n , R(C) := dimC
+n .
+Forx∈F n
+q, define its relative distance toCby
+δ(x,C) := 1
+n min
+c∈C
+wt(x−c).
+Forf,g∈F n
+q, define
+Zρ(f,g;C) :={z∈F q :δ(f+zg,C)≤ρ}.
+We call the elements of this set the exceptional coefficients off,g with respect toC at radiusρ.
+Whenf,g, andC are clear from context, we simply call them exceptional coefficients. The Singleton
+defect ofC is n−dimC−d (C) + 1, andC is MDS when this quantity is zero. We suppress floors
+and ceilings in asymptotic constructions; when a support size such asxn is required to be integral,
+we restrict to an appropriate subsequence ofn, or equivalently insert the corresponding floor or
+ceiling. The subscript in a term such ason(1)indicates the variable tending to infinity. We also
+write
+Φt(u) := 1−(1−u) t.
+ForS⊆[n], write
+FS
+q :={v∈F n
+q : supp(v)⊆S}.
+For a linear codeD⊆F n
+q, its shortening toSis
+D[S] :=D∩F S
+q.
+6
+3 Proof of the main theorem
+In this section we construct the counterexample for our main theorem, which is restated below for
+convenience.
+Theorem 3.1.For every primep, every0<δ <1, every
+J3/2(δ)<ρ<Γ(δ),
+and everyη >0, there are constantsA,c> 0, an integerD≥ 1, and an integers0≥ 1, such that
+the following holds. For everyq:=p s≥p s0, every block length
+AsD≤N <q
+there are anFq-linear codeC⊆F N
+q and wordsf,g∈F N
+q with the following properties.
+•Code parameters.
+|δ(C)−δ|<η, R(C) = 1−δ(C) +O p,δ,ρ,η
+(1
+s
+)
+.
+•Distance of the defining vectors.
+δ(f,C),δ(g,C)>Γ(δ).
+•Exceptional coefficients.
+|Zρ(f,g;C)|≥cq.
+3.1 The small-distance base code
+We start by constructing the small distance counterexample. One should think of the distance of
+the code as being a small3x> 0, the one-and-a-half Johnson radius asx, and the distance of the
+two counterexample words from the code as at least4x/3.
+Lemma 3.2.Fix a primep and a powerQ =pa> 32, withQ /∈{49, 121}. For all sufficiently large
+m, setqm :=Q2m. Then there exist a linear codeCm⊆F nm
+qm and vectorsfm,gm∈F nm
+qm with the
+following properties.
+•Code parameters.
+Lm
+nm
+<δ(C m)< 3em
+nm
+.
+•Distance of the defining vectors.
+δ(fm,Cm),δ(gm,Cm)> 4em
+3nm
+.
+•Exceptional coefficients.
+|Zem/nm(fm,gm;Cm)|≥c Q·qm.
+wherec Q>0is a constant depending only onQ, where
+nm := Qm−1
+Q−1 , e m := Qm−2−1
+Q−1 , L m := 3Qm−3−3Qm−4−1.
+7
+Our code for Lemma 3.2 is constructed in the following steps. Fixp,Q,m as in the lemma. We
+letXdenote the set of one-dimensional subspaces, or lines, ofFm
+Q.
+• For everyW⊆F m
+Q of codimension two, we define its incidence vectoruW∈F X
+p as the vector
+indexed by each lineℓ∈X withuW (ℓ) = 1if ℓ⊆W and0otherwise. We start by considering
+the ambient code
+Um := spanFp{uW :W∈Gr(m−2,F m
+Q)}.
+A key fact, from [AD21], is that every low-weight codeword inUm is a linear combination of
+at most two incidence vectors,uW,uW′.
+• We then design two linear parity checksΨ0 : spanFQ2m(Um)→F 2
+Q2m and define our base code
+as the kernel of this map. Here, note that our parity checks are defined over a larger field
+FQ2m, so our final code is a subspace ofFX
+Q2m. Specifically it is the kernelker(Ψ0). We call
+this codeCm.
+The parameters in Lemma 3.2 count the following objects:nm is the number of lines inFm
+Q, em is
+the number of lines in a codimension-two subspace ofFm
+Q, andLm is a cutoff weight that we will
+use for low-weight codewords inUm. The result of Adriaensen and Denaux [AD21] that we need is
+stated below.
+Theorem 3.3.Every word ofUm of weight at mostLm is an Fp-linear combination of at most two
+incidence vectorsuW.
+Proof. A codimension-two vector subspace ofFm
+Q has projective dimensionk =m− 3, so in the
+notation of [AD21, Section 3.1],Um =Cm−3(m− 1,Q ). BecauseQ> 32and Q /∈{49, 121}, the field
+size Q lies in one of the classesQ3,Q 4,Q 5 of [AD21, Definition 3.2]. In all three cases their cutoff
+W (k,Q )is at least3Qk−3Qk−1−1 =Lm.The conclusion now follows from [AD21, Theorem 5.9].
+From Theorem 3.3 we get the following properties of the ambient codeUm. At a high level,
+these statements help us control the shortenings of the code.
+Lemma 3.4.For every sufficiently largemand everyS⊆X, the following properties hold.
+• Two-incidence-vector containment.If|S|≤L m, thenUm[S]is contained in the span of
+two incidence vectors.
+• One-incidence-vector containment.If|S|≤ 4em/3, thenUm[S]is contained in the span
+of one incidence vector.
+•Minimum distance.In particular,
+d(Um) =e m.
+Proof. Any eight distinct incidence vectors,uW1,...,u W8 are linearly independent. Indeed,uW1
+has support of sizeem while for eachi = 2,..., 8, the supports ofuW1 and uWi share at most
+(Qm−3−1)/(Q−1)indices, and
+7Qm−3−1
+Q−1 <e m.
+By symmetry, everyuWi contains at least one coordinate in its support that is not in the support of
+any otheruWj, j̸ =i. Hence uW1,...,u W8 are linearly independent. Now setS of size|S|≤L m.
+Towards the proof of the first item we first show thatdimUm[S]≤ 2. To see this, suppose that
+8
+v1,v 2,v 3∈U m[S]are linearly independent. By Theorem 3.3, eachvi is a linear combination of at
+most two incidence vectors, all drawn from a collectionuW1,...,u W6. Then we can find av∈U m[S]
+such that
+v=α 1v1 +α 2v2 +α 3v3,
+and the right hand side is a nonzero linear combination of at least3of theuW1,...,u W6. Once
+again using [AD21]v can also be written as a linear combination of at most two incidence vectors,
+hence the equation above gives a non-trivial linear combination of at most8incidence vectors that is
+zero, which is a contradiction. HencedimUm[S]≤ 2. We now consider all3cases for the dimension
+of Um[S]. First, suppose thatdimUm[S]≤ 1. Then the conclusion is immediate by Theorem 3.3.
+Now suppose dimUm[S] = 2. Choose a basis for it,v1,v 2 say. By Theorem 3.3, eachvi is a linear
+combination of at most two incidence vectors, sayuW1,uW2 for v1 and uW3,uW4 for v2. Every
+nonzero linear combination of the basis has, by Theorem 3.3, a representation involving at most two
+incidence vectors of codimension2subspaces. Now identify eachv∈U m[S]with the coefficients of
+its representation as a linear combination ofuW1,...,u W4. Hence, there is a homomorphism from
+Um[S]to F4
+p such thatUm[S]is identified with a two-dimensional subspace ofF4
+p. Moreover, by
+Theorem 3.3, every nonzero vector in the image ofUm[S]has Hamming weight at most two. One
+can check that this space is either supported on two coordinates, in which case we are done, or we
+are in the casep= 2and, after rescaling and relabeling, its three nonzero vectors are
+(1,1,0,0),(1,0,1,0),(0,1,1,0).
+However, this case cannot occur, as the three vectors represented by these coordinates would together
+have support of size at least
+3em−3 Qm−3−1
+Q−1 = 3Qm−3>L m.
+back in FX
+p . This is not possible if they are all inUm[S]since |S|≤L m. This establishes the
+first item and we move on to the second item. Now suppose|S|≤ 4em/3. By the first item, the
+shortening Um[S]is in the span of at most two incidence vectors, sayuW and uW′ for W⊆F m
+Q of
+codimension2. We first have to rule out the case that its dimension is exactly two. If this were the
+case, Um[S]would contain nonzero multiples of both incidence vectors, would have to contain all
+indices in the union of their supports. Hence,
+em +Qm−3> 4
+3em,
+a contradiction. This showsUm[S]has dimension at most one. Finally to complete the proof we
+show that the vector generatingUm[S]is not of the formαuW +βuW′ for nonzeroα,β. To see this,
+first ifα+β= 0, then we would get
+wt(αuW +βu W′)≥2Q m−3,
+while ifα+β̸= 0we get
+wt(αuW +βu W′)≥e m +Qm−3.
+Both bounds exceed4em/3forQ>32, completing the proof of the second item.
+Identify Fm
+Q with V := FQm as FQ-vector spaces. We now go from the ambient codeUm to
+our next codeCm by constructing two parity checks given by a mapΨ0 : spanFQ2m(Um)→F 2
+Q2m.
+9
+For a wordu, we refer toΨ0(u)as its syndrome. Our goal with the parity checks is to have all of
+the distinguished low-weight wordsuW for W of codimension2have syndromes that are linearly
+independent – or have distinct directions. Note that in order to accomplish this, we need to set
+FQ2m to be a large extension ofFQm.
+Lemma 3.5.Let q :=qm =Q2m. There exists anFq-linear mapΨ 0 : spanFq(Um)→F 2
+q with the
+following properties.
+•Nonzero incidence syndromes.For everyW∈Gr(m−2,V),
+Ψ0(uW )̸= 0.
+• Independent syndrome directions.For any distinctW,W′∈Gr (m− 2,V ),Ψ 0(uW )and
+Ψ0(uW′)are linearly independent overFq.
+Proof.ForW∈Gr(m−2,V), write its subspace polynomial as
+LW (X) =
+∏
+w∈W
+(X−w) =X Qm−2
++am−3XQm−3
++am−4XQm−4
++···+a 0X.
+First, note that the coefficients(am−3,am−4)determine W. Intuitively, this is true because each
+coefficient gives a linear constraint on the elements ofW and two linear constraints are needed to
+define a codimension-two subspace. More formally, this is clearly true form = 4. Form≥ 5, if two
+subspace polynomials have the same pair ofQm−3 and Qm−4 coefficients, then their difference is a
+polynomial of degree at mostQm−5 that vanishes on the intersection of the corresponding subspaces,
+which has dimension at leastm− 4. Hence the difference must be zero. Now define the three values
+(d0,d 1,d 2) :=
+(
+Qm−2−1,2Q m−2−Qm−3−1,2Q m−2−Qm−4−1
+)
+.
+Taking the logarithmic derivative ofLW, we get
+∑
+w∈W
+wd0 =a 0,
+∑
+w∈W
+wd1 =−a 0am−3,
+∑
+w∈W
+wd2 =−a 0am−4.
+Indeed,L′
+W (X) =a 0, and
+a0
+LW (X) =
+∑
+w∈W
+1
+X−w =
+∑
+r≥0
+(∑
+w∈W
+wr
+)
+X−r−1.
+Expanding the left-hand side as a Laurent series at infinity and comparing the relevant coefficients
+gives the three identities above. Chooseβ∈F q\FQm, and choose a nonzero representativexλ∈λ
+for eachλ∈X = Gr(1,V ). Since eachdi is divisible byQ− 1, the valuexdi
+λ is independent of the
+choice of representative. Define
+Ψ0(v) :=
+
+∑
+λ∈X
+vλxd0
+λ ,
+∑
+λ∈X
+vλxd1
+λ +β
+∑
+λ∈X
+vλxd2
+λ
+
+.
+ThenΨ 0 isF q-linear and for everyW∈Gr(m−2,V),
+Ψ0(uW ) = a0
+Q−1
+(
+1,−a m−3−βa m−4
+)
+.
+10
+Since a0̸= 0, the syndromeΨ 0(uW )is nonzero. It remains to show that these syndromes are
+pairwise linearly independent. SupposeW,W′∈Gr(m−2,V)satisfy
+spanFq
+(
+Ψ0(uW )
+)
+= spanFq
+(
+Ψ0(uW′)
+)
+.
+Since the first coordinate of each syndrome is nonzero, normalizing that coordinate to1gives
+am−3 +βa m−4 =a′
+m−3 +βa′
+m−4.
+Because1andβare linearly independent overF Qm, it follows that
+am−3 =a′
+m−3, a m−4 =a′
+m−4.
+Hence W =W′. Therefore the incidence vectorsuW have pairwise linearly independent syndromes.
+Fix Um andΨ 0 as in Lemma 3.5, and setDm := spanFq(Um)and Cm := ker(Ψ0). We are ready
+to prove Lemma 3.2.
+Proof of Lemma 3.2.The desired code isCm. We first bound the distance ofCm. For the lower
+bound, suppose that0̸=c∈C m has supportS with|S|≤L m. By this identity and Lemma 3.4,c
+lies in theFq-span of at most two incidence vectors, sayuW,uW′. By Lemma 3.5, the syndromes
+Ψ0(uW ), Ψ0(uW′)are linearly independent, so no nonzero linear combination ofuW,uW′ is inCm,
+contradictingc∈C m. Thereforeδ(Cm)> Lm
+nm. For the upper bound, choose three codimension-two
+subspaces W1,W 2,W 3 inside a common(m− 1)-dimensional subspace such that their pairwise
+intersections have dimensionm−3and their triple intersection has dimensionm−4. Since
+Ψ0(uW1),Ψ 0(uW2),Ψ 0(uW3)∈F 2
+q,
+these three syndrome vectors are linearly dependent. Hence there is a nontrivial linear combination
+h = c1uW1 +c2uW2 +c3uW3 ∈C m. The incidence vectors are linearly independent, soh̸ = 0.
+Moreover,
+supp(h)⊆supp(u W1)∪supp(u W2)∪supp(u W3).
+By inclusion–exclusion,
+|supp(uW1)∪supp(uW2)∪supp(uW3)|= 3e m−3Qm−3−1
+Q−1 +Qm−4−1
+Q−1 = 3Qm−3+Qm−4−1
+Q−1 <3e m.
+Therefore wt(h)< 3em, which proves the upper bound onδ(Cm). We next find the counterexample
+wordsfm and gm. By the displayed identity and Lemma 3.4, every word inDm of weight at most
+4em/3lies in the Fq-span of a single incidence vector. Hence the syndrome of every such word lies
+on one of the incidence syndrome directions. There areq + 1one-dimensional subspaces of F2
+q, while
+|Gr(m−2,F m
+Q)|=
+( 1
+(Q2−1)(Q 2−Q) +om(1)
+)
+q.
+Thus, for all sufficiently largem, there are at least two syndrome directions that are not represented
+by incidence vectors. After a linear transformation, we can assume without loss of generality that
+these directions are(1,0)and(0,1). We takef m,gm∈D m to be the words with
+Ψ0(fm) = (1,0),Ψ 0(gm) = (0,1).
+11
+Now we establish that each word is at Hamming distance greater than4em/3from Cm. Iffm were
+at Hamming distance at most4em/3from Cm, then for somec∈C m, the wordfm−c would have
+weight at most4em/3and syndrome(1 , 0). By Lemma 3.4, every word of this weight is a scalar
+multiple of an incidence vectoruW for W∈Gr (m− 2,Fm
+Q), but by construction this word cannot
+have syndrome inspan((1, 0)). Hence, we have a contradiction. The same argument applies togm,
+so we get
+δ(fm,Cm),δ(gm,Cm)> 4em
+3nm
+.
+Finally, we show thatfm,gm have many exceptional coefficients. For eachW∈Gr (m− 2,Fm
+Q), we
+know thatΨ 0(uW )is in neither span((1, 0))nor span((0, 1)). We may therefore choose a scalar
+αW∈F×
+q such that
+Ψ0(αWuW ) = (1,βW )
+for someβW∈F q. The valuesβW, asW ranges overGr(m−2,Fm
+Q), are distinct because the incidence
+vectors have pairwise linearly independent syndromes. Moreover,Ψ0(fm +βWgm−αWuW ) = 0,
+and thereforefm +βWgm−αWuW∈C m. Since wt(uW ) =em, we obtainδ(fm +βWgm,Cm)≤ em
+nm.
+Thus everyβW lies inZem/nm(fm,gm;Cm). Since|Gr (m− 2,Fm
+Q)| = ΘQ(q), there is a constant
+cQ>0such that ⏐⏐⏐Zem/nm(fm,gm;Cm)
+⏐⏐⏐≥c Qq,
+as desired.
+3.2 Amplifying to all distances
+Lemma 3.2 gives a counterexample at small distance, and in this section we show how to amplify it
+to obtain counterexamples at all distances. In the process, we also reduce the alphabet size. At a
+high level, our strategy is to first view the code from Lemma 3.2 as a code over a smaller field by
+simply viewing its alphabet symbols as vectors over a subfield – this makes the distance even smaller.
+We then amplify the distance by taking random linear combinations of subsets of coordinates, again
+over the subfield. It will be helpful to define and recall
+Φt(u) = 1−(1−u) t,Γ(δ) = 1−(1−δ) 4/9
+Intuitively, we will amplify all of the distances in our small distance counterexample Lemma 3.2
+according tou↦→Φt(u). For smallu and larget, observe that the code’s distance, the proximity-
+gaps radius, and the distance of the counterexample words will approach their desired targets
+δ,J 3/2(δ),Γ(δ)respectively.
+After amplifying, we are not guaranteed to get near-MDS parameters, but we resolve this in a
+straightforward manner by randomly enlarging the code.
+Proof of Theorem 3.1.Set
+η0 := min
+{
+η,δ−Γ(δ)
+4
+}
+.
+Choose a≥ 1so that Q := pa > 32, Q /∈{49, 121}, andQ is sufficiently large in terms ofδ,ρ,η .
+Choose an integert≥1andξ >0such that, for all sufficiently largem,
+Φt
+(em
+nm
+)
++ 3ξ <ρ,Φ t
+(4em
+3nm
+)
+−3ξ >Γ(δ),
+and
+|Φt(u)−δ|< η0
+2 ∀u∈
+[Lm
+nm
+, 3em
+nm
+]
+.
+12
+This maps all of the relevant distances we consider (the distance off,g from the code, the distance
+of the exceptional combinations to the code, and the distance of the code itself) sufficiently close to
+their targets. Now fixs, setq :=ps, and letd := gcd(s, 2a), m :=s/d, andr := 2a/d. Thenr≤ 2a
+and Q2m =qr. Thus, for all sufficiently larges, Lemma 3.2 gives a codeCm⊆F nm
+qr and vectors
+fm,gm satisfying
+Lm
+nm
+<δ(C m)< 3em
+nm
+, δ(f m,Cm),δ(gm,Cm)> 4em
+3nm
+,
+with at leastcQqr exceptional coefficients at radiusem/nm. WriteE :=Zem/nm(fm,gm;Cm)for
+simplicity. Note that0 /∈E. We partition the nonzero elements of Fqr into( qr− 1)/(q− 1)
+one-dimensional Fq-subspaces, that is, identifying each element with a line inFr
+q. Since|E|≥c Qqr,
+one of these subspaces contains at least
+cQqr q−1
+qr−1 ≥ cQ
+2 q
+elements ofE. Write this subspace asbFq for someb∈F ×
+qr. Thus there is a setT⊆F q of size at
+least( cQ/2)q such thatbt∈E for everyt∈T . Replacinggm bybgm and continuing to denote the
+result bygm, we have
+δ(fm +tgm,Cm)≤ em
+nm
+for everyt∈T. SinceC m isF qr-linear, this replacement preservesδ(gm,Cm). Hence, this gives us
+cq exceptional coefficients inFq, wherec :=cQ/2, forfm,gm. We can now view the code as living
+over Fq while preserving a constant fraction of exceptional coefficients. We now amplify and reduce
+the alphabet in one step. For eachj∈ [N], independently sampleij,1,...,i j,t∈ [nm]uniformly with
+replacement and a uniformly randomFq-linear functionalℓj : (Fqr)t→F q, and define
+A(v)j :=ℓ j(vij,1,...,v ij,t).
+Ifvhas relative weightu, then
+Pr[A(v)j̸= 0] =
+(
+1− 1
+q
+)
+Φt(u).
+Hence, by a Chernoff bound, the relative weight ofA(v)is within ξ of this quantity except with
+probabilitye−Ωξ(N). It remains to make this concentration hold simultaneously for all vectors that
+occur in the argument. All of these vectors lie in
+Dm := spanFqr (Um) :
+this includes the codeCm, the vectorsfm,gm, all differencesfm−c and gm−c , and all of the
+exceptional witnesses, so it suffices to show that all target distances are as desired for every vector
+in Dm. To count how many vectors we need to union bound over, we bound the dimension ofDm.
+Let km := dimFpUm. View Fm
+Q as anam-dimensional vector space overFp. Every codimension-two
+FQ-subspace W then has codimension2a over Fp, so there areFp-linear formsλ1,...,λ 2a whose
+common zero set isW. The polynomial
+PW (x) :=
+2a∏
+j=1
+(
+1−λ j(x)p−1
+)
+is the indicator ofW and has degree at most2a(p− 1). Choosing one nonzero representativexℓ for
+eachℓ∈X, we have
+uW = (PW (xℓ))ℓ∈X.
+13
+Hence Um is contained in the image of the evaluation map from polynomials inam variables of
+degree at most2a(p−1)toF X
+p . Therefore
+km≤
+(
+am+ 2a(p−1)
+2a(p−1)
+)
+=O p,Q
+(
+m2a(p−1)
+)
+.
+Then dimFqrDm = km and|Dm| = qrkm. For any fixedv∈D m, the preceding Chernoff bound
+fails with probability at most2e−2ξ2N. Thus the probability that it fails for somev∈D m is at
+most2 qrkme−2ξ2N. Now r = Op,Q(1), m = O(s), and logq = Θp(s), whilekm = Op,Q(m2a(p−1)).
+Consequently
+rkm logq=O p,Q
+(
+s2a(p−1)+1
+)
+.
+It follows that for suitable constantsA >0and D = 2a(p− 1) + 1, wheneverN≥As D the last
+probability is less than one. We may therefore fix a mapA such that simultaneously for every
+v∈D m,
+wt(A(v))
+N =
+(
+1− 1
+q
+)
+Φt
+(wt(v)
+nm
+)
+±ξ.
+Set
+C0 :=A(C m), f:=A(f m), g:=A(g m).
+For sufficiently larges, we have1/q < ξ. Thus the displayed estimate differs fromΦt
+(wt(v)
+nm
+)
+by
+at most2ξ, uniformly overv∈D m. Applying this first to the nonzero words ofCm, and using
+monotonicity ofΦt, gives
+|δ(C0)−Φ t(δ(Cm))|≤2ξ.
+Since Lm
+nm
+<δ(C m)< 3em
+nm
+,
+the choice oftandξgives
+|δ(C0)−δ|<η 0≤η,
+asξis sufficiently small. Similarly, for everyc∈C m,
+wt(A(fm−c))
+N ≥Φ t(δ(fm,Cm))−2ξ,
+and hence
+δ(f,C 0)≥Φ t
+(4em
+3nm
+)
+−2ξ >Γ(δ).
+The same argument givesδ(g,C 0)> Γ(δ). Finally, for everyz∈T there is somecz∈C m such that
+wt(fm +zg m−cz)
+nm
+≤ em
+nm
+.
+Therefore
+δ(f+zg,C 0)≤Φ t
+(em
+nm
+)
++ 2ξ <ρ.
+Thus everyz∈Tremains exceptional after amplification. Since|T|≥cq, we conclude that
+|Zρ(f,g;C 0)|≥cq.
+14
+It remains only to make the code near-MDS. Letd0 :=d(C 0)andb 0 :=⌊Γ(δ)N⌋, and set
+h:=
+⌈
+logq(8·2 N)
+⌉
+.
+Since δ(C0)>δ−η 0 and η0≤ (δ− Γ(δ))/4, we haved0−b 0− 1> 0for all sufficiently larges. If
+C0 already has Singleton defect at mosth, setC :=C0. Otherwise, putK :=N−d 0 + 1−h and
+choose a uniformly randomK-dimensional supercodeC⊇C 0. For any fixedx /∈C0,
+Pr[x∈C] = qK−dimC 0−1
+qN−dimC 0−1 ≤2q K−N = 2q−d0+1−h.
+There are at most2Nqd0−1 vectors of weight at mostd0− 1. Since none of these nonzero vectors
+belongs toC0, the probability thatC has minimum distance belowd0 is at most2N+1q−h≤ 1
+4.
+Similarly, if eitherf or g is within Hamming distanceb0 of C, then for somey∈{f,g} and some
+word u of weight at mostb0, the vectory−u lies inC. None of these vectors lies inC0, by the
+distance bounds already proved. There are at most2N+1qb0 such vectors, so the probability of this
+event is at most
+2N+2qb0−d0+1−h≤ 1
+2.
+Thus with positive probability both properties hold simultaneously. Fix such a supercodeC. Then
+d(C) =d 0 and
+δ(f,C),δ(g,C)>Γ(δ).
+Moreover,Chas Singleton defect at mosth. Sinceq=p s andN <q,
+h
+N =O p
+(1
+s
+)
+,
+and hence
+R(C) = 1−δ(C) +O p,δ,ρ,η
+(1
+s
+)
+.
+Finally,C0⊆C , so passing toC can only decrease the distance off +zg to the code. Therefore
+every coefficient exceptional forC0 remains exceptional forC, and
+|Zρ(f,g;C)|≥cq.
+Together withδ(C) =δ(C 0), this gives|δ(C)−δ|<ηand proves Theorem 3.1.
+4 A counterexample of concrete size
+We conclude by giving a concrete counterexample. The purpose is to demonstrate that our
+counterexamples can exist at rates, block lengths, and field sizes that are within practical ranges
+for SNARK constructions. To obtain useful finite parameters, we use the same construction as our
+main theorem but give a significantly tighter analysis of the amplification step so as to maintain a
+reasonable block length. This requires replacing the generic union bound by a finer-grained analysis
+that separates vectors by weight.
+Theorem 4.1.There are an F2128-linear codeC⊆F 236
+2128 and vectorsf,g∈F 236
+2128 with the following
+properties.
+•Code parameters.
+0.4419<δ(C)<0.4511,0.5410875<R(C)<0.5502875.
+15
+•Distance of the defining vectors.
+δ(f,C),δ(g,C)>0.22945.
+•Exceptional coefficients.At radiusρ:= 0.1816<δ(C)/2, we have
+|Zρ(f,g;C)|≥18,049,720,589,484,545>2 54 = 218·2 36.
+Proof. We specialize the Grassmannian incidence construction toQ = 512 = 29 and m = 5, and
+take the syndrome field to beq= 2128. The raw block length and incidence weight are
+n:=n 5 = 5125−1
+511 = 68,853,957,121, e 5 := 5123−1
+511 = 262,657.
+The lower-distance cutoff isL5 = 3· 5122− 3· 512− 1 = 784,895; setd0 := 784,896and d1 :=
+3·512 2 + 1 = 786,433. The number of codimension-two subspaces ofF5
+512 is
+B:=
+(
+5
+2
+)
+512
+= (5125−1)(512 4−1)
+(5122−1)(512−1) = 18,049,720,589,484,545>2 54.
+Since90 ∤ 128, the explicit syndrome field used in Lemma 3.5 is not a subfield ofFq. We instead
+choose a uniformly randomFq-linear map
+Ψ0 : spanFq(U5)−→F 2
+q.
+For distinct codimension-two subspacesW,W′, the vectorsuW,uW′ are linearly independent, so
+their images under a uniformly randomΨ0 are independent uniform vectors inF2
+q. The probability
+that these two images are linearly dependent is
+q−1 +q−2−q−3.
+Consequently, a union bound gives
+(
+B
+2
+)
+(
+q−1 +q−2−q−3)
+<4.8·10 −7<1.
+Thus there is a map for which all incidence-vector syndromes are pairwise linearly independent. Fix
+such a map and set
+C5 := ker(Ψ0).
+The mapΨ 0 is surjective, and hence
+dimFqC5 = dimF2U5−2.
+Since B <q− 1, there are at least two syndrome directions that are not represented by incidence
+vectors. By surjectivity, we can choosef5,g 5∈span Fq(U5)with syndromes in two such directions,
+exactly as in the proof of Lemma 3.2. The same proof shows thatC5 has minimum distance at least
+d0, has a nonzero codeword of weight at mostd1, and satisfies
+nδ(f 5,C 5), nδ(g5,C 5)> 4e5
+3 .
+16
+Thus, by integrality,
+nδ(f 5,C 5), nδ(g5,C 5)≥350,210.
+Moreover, every codimension-two subspace gives a distinct exceptional coefficientz, and there is a
+wordv z of weighte 5 such that
+f5 +zg 5−vz∈C 5.
+We amplify to block lengthN := 236 using localityt := 52,500. For eachj∈ [N], independently
+sample ij,1,...,i j,t∈ [n]uniformly with replacement and choose a uniformly random Fq-linear
+functionalℓ j :F t
+q→F q. Define
+A(v)j :=ℓ j(vij,1,...,v ij,t).
+Ifwt(v) =w, thenwt(A(v))is binomial withNtrials and success probability
+pw :=
+(
+1− 1
+q
+)(
+1−
+(
+1− w
+n
+)t)
+.
+At the four relevant weights,
+w pw
+262,657 0.1814919007...
+350,210 0.2343498938...
+784,896 0.4503500124...
+786,433 0.4509937976...
+We now choose a single mapA for which all relevant vectors concentrate simultaneously. For
+0<a,b<1, write
+D(a∥b) :=alog a
+b + (1−a) log 1−a
+1−b .
+We use the Chernoff estimate
+Pr[Bin(N,b)≤aN]≤e −ND(a∥b) (a<b),
+and the analogous upper-tail estimate whena>b . We first record the dimension of the base code.
+By Hamada’s rank formula [Ham68, Theorem 1], specialized to points and planes ofPG(4, 29), the
+binary rank is1 + tr(D9), where, indexing the rows and columns by(4,3),
+Ds,s′ = [x2s′−s](1 +x) 5, D=
+((5
+4
+) (5
+2
+)
+(5
+5
+) (5
+3
+)
+)
+=
+(
+5 10
+1 10
+)
+.
+Direct exponentiation therefore gives
+dimF2U5 = 1 + tr(D9) = 3,604,584,376.
+The two independent syndrome checks therefore give
+k:= dim FqC5 = 3,604,584,374.
+For a setS⊆ [n]of size w, the shorteningC5[S]has minimum distance at least d0. Singleton
+therefore gives
+dimC 5[S]≤min{k,max{0,w−d 0 + 1}}.
+Consequently, the number of codewords of weightwis at most
+(
+n
+w
+)
+qmin{k,max{0,w−d0+1}}.
+17
+The same bound applies to the intersection of either affine cosetf5 +C5 or g5 +C5 with a fixed
+weight layer, since for a fixed support its intersection with the coset is either empty or an affine
+translate of a shortening ofC5. SetW := 12,550,000. For the derivative calculations below, regard
+was a real variable and put
+rw :=
+(
+1− w
+n
+)t
+.
+For fixeda<p w, we have
+∂
+∂bD(a∥b) = b−a
+b(1−b) , p′
+w
+1−p w
+= t
+n−w
+(1−q −1)rw
+q−1 + (1−q −1)rw
+.
+Forw≤W, we haver w≥r W >6.97·10 −5, and hence
+N pw−a
+pw(1−p w)p′
+w >0.999 Nt
+n−w
+(
+1− a
+pw
+)
+.(1)
+We first control the minimum distance of the image code. Setα := 0.4419. Ford0≤w≤W , using(n
+w
+)
+≤(en/w) w, the logarithm of the union-bound contribution at weightwis at most
+F(w) :=wlog en
+w + (w−d 0 + 1) logq−ND(α∥p w).
+Here W−d 0 + 1 = 11,765,105<k , sow−d 0 + 1is the active shortening exponent throughout this
+interval. Moreover,
+F′(w) = log n
+w + logq−N pw−α
+pw(1−p w)p′
+w.
+Sincep w≥p d0 >0.45035, Equation (1) gives
+N pw−α
+pw(1−p w)p′
+w >982,log n
+w + logq≤log n
+d0
++ 128 log 2<101.
+Consequently,F′(w)<−881throughout the interval. Atw=d 0,
+d0 log en
+d0
++ logq <9,718,630<9,922,939<ND(0.4419∥p d0).
+Thus the total contribution of these weight layers is exponentially small. Forw≥W , we instead
+use the global bound|C5|=q k. Sincep w is increasing,
+klogq <319,808,959,479<319,867,786,434<ND(0.4419∥p W ).
+Thus, except with negligible probability,
+wt(A(c))>0.4419Nfor every nonzeroc∈C 5.
+We next control the two affine cosets. Setβ := 0.22945and w∗ := 350,210. There are no words of
+f5 +C5 or g5 +C5 of weight beloww∗. For weights belowd0, each support contains at most one
+word from either coset; aboved0 we again use the shortening bound. The logarithmic exponents of
+the union-bound contributions are
+G0(w) :=wlog en
+w −ND(β∥p w) (w ∗≤w<d 0)
+18
+and
+G1(w) :=wlog en
+w + (w−d 0 + 1) logq−ND(β∥p w) (d 0≤w≤W).
+At the smallest possible weight,
+w∗ log en
+w∗
+<4,618,908<4,620,069<ND(β∥p w∗).
+Since pw≥p w∗ > 0.2343on the first interval andpw≥p d0 > 0.45035on the second, Equation (1)
+gives
+G′
+0(w) = log n
+w−N pw−β
+pw(1−p w)p′
+w, G ′
+1(w) =G′
+0(w) + logq,
+and therefore
+G′
+0(w)<13−1083<−1070, G ′
+1(w)<101−25,675<−25,574,
+respectively. At the transition between the intervals, usinglogq <89, we have
+G1(d0) =G 0(d0) + logq <G0(w∗)−1070(d 0−w∗) + 89<G 0(w∗).
+Thus the largest exponent over all weights belowWoccurs atw=w∗. Forw≥W,
+klogq <319,808,959,479<469,738,761,478<ND(0.22945∥p W ).
+Therefore, simultaneously for everyc∈C 5,
+wt(A(f5−c))>0.22945N,wt(A(g 5−c))>0.22945N
+except with negligible probability. We now control the exceptional witnesses. Eachvz has weight
+exactly e5, andND(0.1816∥pe5)> 2702. Since logB <38, a union bound shows that, except with
+probability less thane−2664,
+wt(A(vz))≤0.1816N
+simultaneously for allB distinguished coefficients. Finally, leth0∈C 5 be the nonzero word of
+weight at mostd1 given by the three-incidence construction. SinceND(0.4511∥pd1)> 1565, we have
+wt(A(h0))<0.4511N
+except with probability less thane−1565. The sum of all failure probabilities is less than one. Hence
+there is a choice ofA for which all of the preceding properties hold simultaneously. Fix such a map
+and set
+C0 :=A(C 5), f 0 :=A(f 5), g 0 :=A(g 5).
+Since every nonzero codeword maps to a word of positive weight,A is injective onC5, sodimC 0 =k.
+We have
+0.4419<δ(C 0)<0.4511, δ(f 0,C 0),δ(g 0,C 0)>0.22945.
+Furthermore, for every distinguished coefficientz,
+f0 +zg 0−A(f 5 +zg 5−vz) =A(v z),
+withA(f 5 +zg 5−vz)∈C 0. Henceδ(f 0 +zg 0,C 0)≤0.1816, and therefore
+|Z0.1816(f0,g 0;C 0)|≥B.
+19
+It remains to completeC0 to a near-MDS code. Putd:=d(C 0),b:=⌊0.22945N⌋, and
+h:=
+⌈
+logq(4·2 N)
+⌉
+=
+⌈N+ 2
+128
+⌉
+= 536,870,913.
+Sinced<0.4511Nandk= 3,604,584,374, the initial Singleton defect satisfies
+N−k−d+ 1>0.5489N−k>h.
+We therefore putK :=N−d + 1−h and choose a uniformly randomK-dimensional supercode
+C⊇C 0. For every fixedx /∈C0,
+Pr[x∈C]≤2q K−N = 2q−d+1−h.
+There are at most2Nqd−1 vectors of weight at mostd−1, so
+Pr[d(C)<d]≤2 N+1q−h≤ 1
+2.
+Similarly, if either f0 or g0 is within Hamming distance b of C, then one of at most2 N+1qb
+corresponding vectors lies inC. Hence the probability of this event is at most
+2N+2qb−d+1−h≤q−1,
+where we used
+d−b−1>(0.4419−0.22945)N−1>0.212N.
+The two failure probabilities sum to less than one, so there exists such a supercodeCsatisfying
+d(C) =d(C 0), δ(f 0,C),δ(g 0,C)>0.22945.
+Moreover,Chas dimensionKand hence Singleton defect exactlyh. SinceN= 2 36,
+h= N
+128 + 1, R(C) = 1−δ(C)− 1
+128.
+The distance bounds therefore imply
+0.5410875<R(C)<0.5502875.
+Since C0⊆C , every coefficient exceptional forC0 remains exceptional forC. Relabelingf0,g 0 as
+f,g, we have
+|Z0.1816(f,g;C)|≥B= 18,049,720,589,484,545>2 54.
+Finally,
+J3/2(δ(C))<J 3/2(0.4511)<0.1816<0.22095 = 0.4419
+2 < δ(C)
+2 .
+Thus
+δ(C)
+2 −0.1816>0.03935.
+SinceB >2 54 andN= 2 36, we also have
+|Z0.1816(f,g;C)|>2 18N.
+20
+Acknowledgments
+The first author was hosted at MIT Sloan School of Management while this research was conducted
+and is grateful for their hospitality.
+References
+[ABF26] Gal Arnon, Dan Boneh, and Giacomo Fenzi. Open problems in list decoding and
+correlated agreement. Cryptology ePrint Archive, Paper 2026/680, 2026.
+[ACFY24] Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, and Eylon Yogev. STIR: Reed-Solomon
+proximity testing with fewer queries. In Leonid Reyzin and Douglas Stebila, editors,
+Advances in Cryptology - CRYPTO 2024 - 44th Annual International Cryptology Con-
+ference, Santa Barbara, CA, USA, August 18-22, 2024, Proceedings, Part X, volume
+14929 ofLecture Notes in Computer Science, pages 380–413. Springer, 2024.
+[ACFY25] Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, and Eylon Yogev. WHIR: Reed-Solomon
+proximity testing with super-fast verification. In Serge Fehr and Pierre-Alain Fouque,
+editors,Advances in Cryptology - EUROCRYPT 2025 - 44th Annual International
+Conference on the Theory and Applications of Cryptographic Techniques, Madrid, Spain,
+May 4-8, 2025, Proceedings, Part IV, volume 15604 ofLecture Notes in Computer
+Science, pages 214–243. Springer, 2025.
+[AD21] S. Adriaensen and L. Denaux. Small weight codewords of projective geometric codes.
+Journal of Combinatorial Theory, Series A, 180:105395, 2021.
+[AGK+26] A. Abdugafarov, A. Garreta, A. Kumar, M. Osadnik, P. Vesely, I. Vlasov, and K. Z.
+Zheng.Zinc+: SNARKs for polynomial rings. Cryptology ePrint Archive, Paper
+2026/855, 2026.
+[BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. Fast Reed-Solomon
+interactive oracle proofs of proximity. In Ioannis Chatzigiannakis, Christos Kakla-
+manis, Dániel Marx, and Donald Sannella, editors,45th International Colloquium on
+Automata, Languages, and Programming, ICALP 2018, Prague, Czech Republic, July
+9-13, 2018, volume 107 ofLIPIcs, pages 14:1–14:17. Schloss Dagstuhl - Leibniz-Zentrum
+für Informatik, 2018.
+[BCF+25] Martijn Brehm, Binyi Chen, Ben Fisch, Nicolas Resch, Ron D. Rothblum, and Hadas
+Zeilberger. Blaze: Fast snarks from interleaved RAA codes. In Serge Fehr and Pierre-
+Alain Fouque, editors,Advances in Cryptology - EUROCRYPT 2025 - 44th Annual
+International Conference on the Theory and Applications of Cryptographic Techniques,
+Madrid, Spain, May 4-8, 2025, Proceedings, Part IV, volume 15604 ofLecture Notes in
+Computer Science, pages 123–152. Springer, 2025.
+[BCH+25] E. Ben-Sasson, D. Carmon, U. Haböck, S. Kopparty, and S. Saraf. On proximity gaps
+for Reed–Solomon codes. Cryptology ePrint Archive, Paper 2025/2055, 2025.
+[BCI+23] E. Ben-Sasson, D. Carmon, Y. Ishai, S. Kopparty, and S. Saraf. Proximity gaps for
+Reed–Solomon codes.Journal of the ACM, 70(5):31:1–31:57, 2023.
+21
+[BGKS20] E. Ben-Sasson, L. Goldberg, S. Kopparty, and S. Saraf. DEEP-FRI: Sampling outside
+the box improves soundness. In11th Innovations in Theoretical Computer Science
+Conference (ITCS 2020), volume 151 ofLIPIcs, pages 5:1–5:32, 2020.
+[DG24] B. E. Diamond and A. Gruen. Proximity gaps in interleaved codes.IACR Communica-
+tions in Cryptology, 1(4):8, 2024.
+[DG25] B. E. Diamond and A. Gruen. On the distribution of the distances of random words.
+Cryptology ePrint Archive, Paper 2025/2010, 2025.
+[GG25] R. Goyal and V. Guruswami. Optimal proximity gaps for subspace-design codes and
+(random) Reed–Solomon codes. ECCC TR25-166, 2025.
+[GGSW26] R. Goyal, V. Guruswami, Y. Sun, and M. Wootters. Locality of curve-decoding and
+improved proximity gaps. arXiv:2607.08516, 2026.
+[GLS+23] A. Golovnev, J. Lee, S. T. V. Setty, J. Thaler, and R. S. Wahby. Brakedown: Linear-time
+and field-agnostic SNARKs for R1CS. InAdvances in Cryptology—CRYPTO 2023,
+Part II, pages 193–226, 2023.
+[Ham68] Noboru Hamada. The rank of the incidence matrix of points andd-flats in finite
+geometries.Journal of Science of the Hiroshima University, Series A-I (Mathematics),
+32(2):381–396, 1968.
+[Kam26] A. Kambiré. Proximity gaps conjecture fails near capacity over prime fields.
+arXiv:2604.09724, 2026.
+[KKH26] Dmitry Krachun, Stepan Kazanin, and Ulrich Haböck. Failure of proximity gaps close
+to capacity.IACR Cryptol. ePrint Arch., 2026:782, 2026.
+[XZS22] T. Xie, Y. Zhang, and D. Song. Orion: Zero knowledge proof with linear prover time.
+InAdvances in Cryptology—CRYPTO 2022, Part IV, pages 299–328, 2022.
+[ZCF24] H. Zeilberger, B. Chen, and B. Fisch. Basefold: Efficient field-agnostic polynomial
+commitment schemes from foldable codes. InAdvances in Cryptology—CRYPTO 2024,
+Part X, pages 138–169, 2024.
+22

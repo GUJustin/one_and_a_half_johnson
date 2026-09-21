@@ -1,0 +1,11 @@
+'OneAndAHalfJohnson.MainTheorems.conditionalMainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.smallDistanceBase_of_AD21' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.shorteningStructure_of_AD21' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.syndromeSeparation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.uniqueDecodingCounterexamples_of_AD21' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.actual_unique_radius_of_AD21' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OneAndAHalfJohnson.MainTheorems.conditionalConcreteTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]

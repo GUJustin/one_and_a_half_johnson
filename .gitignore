@@ -1,0 +1,4 @@
+formalization/.lake/
+.DS_Store
+__pycache__/
+validation/current-check.log

@@ -1,0 +1,2482 @@
+{
+  "status": "PASS",
+  "scope": "Every explicitly named local declaration; target propositions are definitions, not proofs of their truth.",
+  "toolchain": "leanprover/lean4:v4.34.0",
+  "dependency_pins": {
+    "Arklib": "fa14552d40e793f2ea26e65c440306aae0c08a26",
+    "CompPoly": "7e3683ba72f61c1f3c2deda85953ce26392f0771",
+    "checkdecls": "3d425859e73fcfbef85b9638c2a91708ef4a22d4",
+    "\u00abdoc-gen4\u00bb": "a6521b2d0c93dcdf2d640089f95548df5dd8bf46",
+    "VCVio": "7a4d7ee254165f2fcf3282c7d2e6f204056e5121",
+    "mathlib": "5ed2965256430c3649e86755f9576b54eca72435",
+    "leansqlite": "f9cdb9eacb5c8b8ecc02ee9fd9e568d7d28c1416",
+    "Cli": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+    "UnicodeBasic": "0e569d08b6443ce0908d356884c765397253e2f0",
+    "BibtexQuery": "4d8616fd4870d0a3453d845770833eac7951fe1c",
+    "MD4Lean": "31907cc18f48a95384f99cee5582c00fb39e0f67",
+    "PolyFun": "3710d71b28404a151b8d1f0ce080ea448778dec0",
+    "plausible": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+    "LeanSearchClient": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+    "importGraph": "e928b72544873815af278d38681b31c0293588e3",
+    "proofwidgets": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+    "aesop": "355695d523e41d0554926416cba2a2b3544fbbc9",
+    "Qq": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+    "batteries": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+    "cslib": "990e65a685bed413f43b139db900a36ad5322a10"
+  },
+  "source_sha256": {
+    "formalization/OneAndAHalfJohnson/Amplification.lean": "25d912d03b3bfa862f2eb2cb989825ca2cfd8d725f6210757c193e791a2e5fd7",
+    "formalization/OneAndAHalfJohnson/AmplificationAssembly.lean": "c71e528df89532f24b86d6a06f02b8e0163f658520afa52b1a8316cfba1394bf",
+    "formalization/OneAndAHalfJohnson/AmplificationLimits.lean": "a7319a36a456ee2057950d418c0db63e482cbfe2ce5e327c753cff573e5a56a6",
+    "formalization/OneAndAHalfJohnson/AmplificationParameters.lean": "5b798f2d40c25036a4183843376ca42c7132e89cc04d45e68e195911cfd9076f",
+    "formalization/OneAndAHalfJohnson/AmplificationSize.lean": "f02f2d055efdcca06527d7da6c81698b1080f6f30221d61dff2f34d6eb66365a",
+    "formalization/OneAndAHalfJohnson/AsymptoticConstruction.lean": "a42f6fd38ff6d3d4e230e390f92d59238b809ed6c18ff7f30410916a1a07ff97",
+    "formalization/OneAndAHalfJohnson/AsymptoticSizing.lean": "31456d4c640186651d6856ce3e479f7e1171410b20cde4a977387975d07f54fe",
+    "formalization/OneAndAHalfJohnson/BaseCardinality.lean": "5c7618bc4bc047ba68d197184394d9fe022862ceb11de47600380056f38a1959",
+    "formalization/OneAndAHalfJohnson/BaseConstruction.lean": "af6be0c784b71985e5087d48601247cba20979b6043591e444ca42f131ae1007",
+    "formalization/OneAndAHalfJohnson/BaseWeightBounds.lean": "990ddb7c0a1323fb9769ba8b50a597cdb92352080bda7778c93b411e627f75fb",
+    "formalization/OneAndAHalfJohnson/Basic.lean": "bae64195dc3b418a9c49f9c0c85850823b528899221a84641ebe0ca3f3f912d2",
+    "formalization/OneAndAHalfJohnson/BernoulliChernoff.lean": "313952ba452e087af49a61a216b1b8dfbfe3e803476514bbb8ab9b3126d45bf3",
+    "formalization/OneAndAHalfJohnson/CodeCompletion.lean": "80ff81aaefa9909cb51811819d3e473c34d7a0783bab5c7abdf5fc3a579e8497",
+    "formalization/OneAndAHalfJohnson/CodeDistance.lean": "8b45653ea9504a525ce89220066fad16b3680a379f72315e5b509a4a17ac2888",
+    "formalization/OneAndAHalfJohnson/CompletionParameters.lean": "fe6e95891b5d20beac9f9b848c3bdda870bf3b2866e38413a12217926f46907f",
+    "formalization/OneAndAHalfJohnson/ConcreteAnalyticBounds.lean": "49a16146bd63f0ce356ed522462fa62de1c0e5d9f1e71e21a6aa5a648478f6cc",
+    "formalization/OneAndAHalfJohnson/ConcreteArithmetic.lean": "e026dc4745fac781453a7ba12dcbc08017efe7eb53e8c8711669f8349ecae758",
+    "formalization/OneAndAHalfJohnson/ConcreteBase.lean": "717e1e80bcd3df5a276026c4bd52eaa29a051929e6e7f1d5c4c87f064e414c26",
+    "formalization/OneAndAHalfJohnson/ConcreteCompletion.lean": "42a3f42490a79afbc5c1e566b8d8a5a7bdadd47e24911cd0f6080be08c818b9a",
+    "formalization/OneAndAHalfJohnson/ConcreteConstruction.lean": "1050664108657bc65c82f07def7839847f332f8516aa65b54fa4bea5475b2420",
+    "formalization/OneAndAHalfJohnson/ConcreteDivergenceBounds.lean": "119f8ba555905ec9889b22522d436cf101cda3a60c0ee3bfa3a3a0be60dad76e",
+    "formalization/OneAndAHalfJohnson/ConcreteFailureSums.lean": "483155bc796f584e85b8d0deb33d8b6454e415a50d21adf69b495b4724b226e1",
+    "formalization/OneAndAHalfJohnson/ConcreteLayerCounting.lean": "4650751968d11d24466aa30acd642ca624f20c0c3d1e602516c784358c684de3",
+    "formalization/OneAndAHalfJohnson/ConcreteLayerDerivative.lean": "c8abe19ec44ace33ab1c888451e1513a1b86c6c86813e96cb8251e1ba90f5290",
+    "formalization/OneAndAHalfJohnson/ConcreteLogBounds.lean": "b5d60acf52e31537cb96e4110f8a31987c6a087d66fb8262d2b45f65c4785c29",
+    "formalization/OneAndAHalfJohnson/ConcreteProbabilityCalculus.lean": "2344e2bfb08b748f4e705786468f7fc12aa1312506a8ce1dfc5fe6460b10a061",
+    "formalization/OneAndAHalfJohnson/ConcreteSampling.lean": "8ce44d18515a6874b94603a177d28d77cf89815e96f1432cdfd028074595cb77",
+    "formalization/OneAndAHalfJohnson/ConcreteSyndrome.lean": "71080e0a1e3717875dcd2c4d855e83e035339e3ab1e68b32ffe5fad87165181e",
+    "formalization/OneAndAHalfJohnson/ConcreteTailEnvelopes.lean": "c81e73479af042eb690628c1882eae676c0e2604f8f0ce01abd4fe095c23b2a4",
+    "formalization/OneAndAHalfJohnson/CoordinateTransport.lean": "ba5ff42002352b648918a0095860c75038d7d3ed776f3cdaa191bd30722df491",
+    "formalization/OneAndAHalfJohnson/FieldSizing.lean": "004f350e0e969b9659df6e20672f10123ea16e665c92fc6b969b447d52b5a244",
+    "formalization/OneAndAHalfJohnson/FieldTowerSizing.lean": "445da368ec6aef0daf14d8cbb9052db8d6becfef25c0a59357768bfafaea2d56",
+    "formalization/OneAndAHalfJohnson/FiniteSyndrome.lean": "dbe45f1bc538a6f6cc51f1dec80af98d9486b8a002935cf146b774bf9e717efb",
+    "formalization/OneAndAHalfJohnson/Geometry.lean": "f77bb19c2bf3e54a3c6bba43f0c2832ea63139dfd3d15b4931e38281d93a00b5",
+    "formalization/OneAndAHalfJohnson/GeometryCardinality.lean": "c716a20f8732b5cda7619ac978f746fd1d6f145a7da9f08151ee0f860cbc395e",
+    "formalization/OneAndAHalfJohnson/GeometryIndependence.lean": "7e7baf53886aae67c071b9077187c52749335493a9aeccdefc09c1087b7e3841",
+    "formalization/OneAndAHalfJohnson/GeometryShortening.lean": "9150a4bdd962c2678f45d510619ae0c2f75a962ec4d85e297534cbdb6e0cd034",
+    "formalization/OneAndAHalfJohnson/GeometryShorteningBounds.lean": "826931bd7f6887f935ae81d7894c82c25f19c098ba88d6b9c2e4ff265ff5db72",
+    "formalization/OneAndAHalfJohnson/GeometryTriple.lean": "624f55b3af011f1e9b76aef72820b1e91f1366dcb77d04f3ef81a42595143c40",
+    "formalization/OneAndAHalfJohnson/Incidence.lean": "f1fb9cbb2f9b4948ed4c18b33530942734157e9f8f72744f38d61853eb5ad223",
+    "formalization/OneAndAHalfJohnson/IncidenceRankBound.lean": "a4d918a24f0cbde9c52cdb50674c28ae5884dc6ffbfa0180ce55d22d2763fabc",
+    "formalization/OneAndAHalfJohnson/KernelWitness.lean": "d3e788702fddb42db3103daf0ad5d9e820cceda1543274a6a44c663c146a5715",
+    "formalization/OneAndAHalfJohnson/LayerUnionBound.lean": "44f8dad3bb6832ca65b7fd52387b874f37702b61f581d88fa15268b8f2861d5a",
+    "formalization/OneAndAHalfJohnson/MainTheorems/BaseConstruction.lean": "95761d44ffe5ef8ef5d7b66b52b977a7b7c7f4d1aef807a791d7a460423b22fe",
+    "formalization/OneAndAHalfJohnson/MainTheorems/Concrete.lean": "78ab2bbdd698948e9461e3cc69e2d660aad958efd4d0e3310145f49f77eb9db5",
+    "formalization/OneAndAHalfJohnson/MainTheorems/Main.lean": "374bba1d71f3da2d6137cc35cb184ff29a5e587b7f60d3b4d66c36764844b709",
+    "formalization/OneAndAHalfJohnson/MainTheorems/Shortening.lean": "a6764c2819a5050c2ca8036acf8fc3d099dda09a7ddd8a50a9d65eb7cb8ca04e",
+    "formalization/OneAndAHalfJohnson/MainTheorems/SyndromeSeparation.lean": "a8e41698ef11f25e0fa9d827ef98bb5ca6681ecbba278d171757ac7f3f2495f4",
+    "formalization/OneAndAHalfJohnson/NumericLogCertificates.lean": "b7e7321fd220dab2f6ec5d04f7702f20e9f78c29c6796820387a9a8adc6ba07c",
+    "formalization/OneAndAHalfJohnson/RandomAmplification.lean": "95ca6d96e0c88251e73d438df1f59f5a8fc0bf35fd83376fc91ec1003dac6084",
+    "formalization/OneAndAHalfJohnson/RandomFunctional.lean": "9fb6d7975b7a787531c0a6e1dcad5b9d4b38768b4acc024104411889be0f13e8",
+    "formalization/OneAndAHalfJohnson/RandomSampling.lean": "f33e9d400b43d6b14ba8f50760adfff3eb7b7b09df7559ba454c1bdd1046d35d",
+    "formalization/OneAndAHalfJohnson/RefinedRandomAmplification.lean": "61c98296bf75e93a6f67b476a4565351114cb94834bba861789b9e36e3904d45",
+    "formalization/OneAndAHalfJohnson/ScalarExtension.lean": "25825548b20600c2955341b8522ec8162d59fd971e39aed720e75f872bbb4bde",
+    "formalization/OneAndAHalfJohnson/Shortening.lean": "438ae10fc86cd44225e7cd41cd98245e5865c97dfaa3d722e06b30a1091a518f",
+    "formalization/OneAndAHalfJohnson/SubfieldLines.lean": "6b9b2a56e9add3765d0d0bb180843cce250985db3a5914f91a48e5995967bb0a",
+    "formalization/OneAndAHalfJohnson/SubfieldReduction.lean": "c0bacb63939c1d46b4b10171f6e167eef9cbed0c792a08ffc0a3752dade32f9f",
+    "formalization/OneAndAHalfJohnson/SubspacePolynomial.lean": "e8640130e3413d635313e23d5c759e6b6ddc665cc392db596280fac07513352d",
+    "formalization/OneAndAHalfJohnson/SubspacePolynomialMoments.lean": "a58114d2ce84cd4b38213c59c324fa9357bf5f3d8a9996f7b226f3e7192e76f7",
+    "formalization/OneAndAHalfJohnson/SubspacePolynomialSeparable.lean": "568c21be27784329428f18dc36dc59026faed9adc1c604e3314a70b3ee05167f",
+    "formalization/OneAndAHalfJohnson/SubspacePolynomialShape.lean": "2bdaaadeeb0916c53d5abf0b81ddfb21533cc1035385a2aa6191867f132c5fc5",
+    "formalization/OneAndAHalfJohnson/Supercode.lean": "44294eb07e1138d6acc907d62c284b125b4612c7d0fcdd35416357f6bb64d405",
+    "formalization/OneAndAHalfJohnson/Syndrome.lean": "142e0cf6b7e49e704dea5d750bccf073c4d7c99975fb154041c27180c1626175",
+    "formalization/OneAndAHalfJohnson/SyndromeConstruction.lean": "31239764d18e3be6797a017b752141c7f4d84ab881b8880f570b62a5adf72dcc",
+    "formalization/OneAndAHalfJohnson/SyndromeDirections.lean": "b913961d4d1b2c66fd0eebc98c88d41c4b2960da40fca3e29da1157df53de554",
+    "formalization/OneAndAHalfJohnson/Targets/Base.lean": "745211023de81bc5b120a7f1c31df82042efd283333e89367b624cc9ca3698e4",
+    "formalization/OneAndAHalfJohnson/Targets/Conditional.lean": "7f4cb693bd131e7ba5128ce319830b9e7776972a264da99e264428630dc9c1e4",
+    "formalization/OneAndAHalfJohnson/Targets/External.lean": "4f29d0403f83a5fa7ecc402e950855baf65e9e6bc5422de07349241aed7d0ca4",
+    "formalization/OneAndAHalfJohnson/Targets/Main.lean": "36a9a81adf221307e2cbfa4d2cebc418cefcae35d4adebd3d6014215f757725a",
+    "formalization/OneAndAHalfJohnson/Thresholds.lean": "fdda79fd336fc1029f4e1a2908145e1011eb14c8ffeaf923579041887f8c10b8",
+    "formalization/OneAndAHalfJohnson/UniformConcentration.lean": "8ab36c3d3e9b0491a3a0137313b0f1ce5f9ea6bd0eddf39464f0b80e67369258",
+    "formalization/OneAndAHalfJohnson/WeightLayerBounds.lean": "88722116dbb7128c9282d2de9d706c89eb90a88b70893588c3133ee7146579b6"
+  },
+  "declarations": {
+    "OneAndAHalfJohnson.relativeWeight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.relativeWeight_le_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.far_image_of_uniform_amplification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.close_image_of_uniform_amplification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exceptional_count_image_of_uniform_amplification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.injective_on_code_of_uniform_amplification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_minimum_weight_word": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.relativeDistance_le_relativeWeight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.image_distance_of_uniform_amplification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.image_distance_bounds_of_uniform_amplification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Close.exists_relativeWeight_difference": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplified_image_parameters": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_relative_nearMDS_completion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.tendsto_amplify_floor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_distance_overshoot": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.tendsto_amplify_floor_div": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_left_positive_of_continuousAt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplificationScale": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplificationScale_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplificationScale_endpoints": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_amplification_parameters": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplificationSizeConstant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.family_card_le_exp_of_dimension_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.hoeffding_union_lt_one_of_polynomial_length": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplificationSizeConstant_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_polynomial_hoeffding_threshold": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplify_mem_Icc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplification_error_le_add_inv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.asymptotic_code_at_size": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_final_size_threshold": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.codimTwo_card_lt_syndrome_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.syndrome_card_le_four_mul_count_mul_qpow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.codimTwo_card_fraction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseConstruction.pair_span_kernel_exclusion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseConstruction.surjective_restriction_of_pair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseConstruction.exists_unused_slope": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseConstruction.singleton_syndrome_ne_vertical": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseConstruction.singleton_syndrome_ne_affine": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseConstruction.card_exceptional_ge_of_offset_slopes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseConstruction.extended_small_word_pair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseConstruction.extended_small_word_singleton": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseWeightBounds.parameter_identities": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseWeightBounds.cleared_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseWeightBounds.normalized_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.BaseWeightBounds.normalized_unit_interval": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Close": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Far": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exceptional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.relativeDistance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.rate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.johnson": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.gamma": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplify": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Close.mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Far.not_close": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.mem_exceptional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exceptional_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.bernoulliKL": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.bernoulliTilt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.bernoulli_tilt_identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.bernoulliTilt_nonpos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.bernoulliTilt_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.integrable_exp_mul_of_zero_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.mgf_of_zero_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.mgf_sum_zero_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.bernoulli_sum_lower_tail": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.bernoulli_sum_upper_tail": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.card_hamming_ball_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_code_completion_of_weight_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_code_completion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.code_distance_gt_of_nonzero_weights": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.code_distance_le_of_nonzero_word": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.syndrome_kernel_distance_gt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.syndrome_nonzero_of_pair_span_classification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.syndrome_kernel_distance_gt_of_pair_span_classification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.completion_cardinality_of_defect_power": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.singletonDefect": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.singletonDefect_balance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_completion_defect_eq_min": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_completion_defect_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.rate_eq_one_sub_distance_add_defect": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.rate_error_le_of_defect_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.completion_defect_power_of_exponent_bound": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_completion_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_completion_defect_power": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.asymptoticCompletionDefect": [],
+    "OneAndAHalfJohnson.asymptoticCompletionDefect_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.asymptoticCompletionDefect_power": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.asymptoticCompletionDefect_rate_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_completion_rate_error_le_six_div": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.rowProbability": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.mul_interval": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.square_interval": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_e": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_wstar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_d0": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_d1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_W": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.raw_length": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.incidence_weight": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.distance_cutoffs": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.incidence_count": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.exceptional_count_gap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.unused_directions_cardinality": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.syndrome_union_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.integral_coset_cutoff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.completion_defect": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.shortening_transition": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.completion_room": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.completion_rate_identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.rate_interval": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.radius_gap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.coset_completion_separation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteArithmetic.hamada_matrix_trace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_base_of_AD21_Hamada": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_concrete_completion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_code_of_sampled_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_code_consequences": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_alpha_d0": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_beta_wstar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_alpha_W": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_beta_W": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_tau_e": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_delta_d1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.count_d0_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.count_wstar_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.count_global_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.log_q_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.survival_W_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.finite_field_correction_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.derivative_envelope_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.derivative_alpha_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.derivative_beta_first_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.derivative_beta_second_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.log_derivative_alpha_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.log_derivative_beta_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.log_exceptional_count_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_d0_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.probability_wstar_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.coarse_failure_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.family_tail_sum_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.nonzeroCodeWords": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.nonzeroCodeWords_min": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.nonzeroCodeWords_subset": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.field_power_as_exp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.global_tail_of_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.affineCodeWords_min_of_source": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_family_failure_sum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_nonzero_failure_sum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_affine_failure_sum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.concrete_choose_le_exp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.layer_tail_of_exponent_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.layer_tail_of_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.rowSlope": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.layerExponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.hasDerivAt_layerExponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.alpha_d0_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.alpha_d0_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.beta_wstar_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.beta_wstar_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.alpha_W_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.alpha_W_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.beta_W_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.beta_W_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.tau_e_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.tau_e_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.delta_d1_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.delta_d1_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.count_d0": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.count_wstar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteLogBounds.log_two": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.hasDerivAt_bernoulliKL": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.hasDerivAt_rowProbability": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.rowProbability_monotone": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.rowProbability_mem_Ioo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.bernoulliKL_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.global_alpha_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.global_beta_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.bernoulliKL_antitone": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.short_word_upper_tail": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.incidence_upper_tail": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sampledMean_concrete": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_concrete_sampling_map": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_concrete_separating_syndrome": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.finrank_inter_ker_of_surjective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_kernel_finrank_of_Hamada": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.slope_div_survival": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_gain_of_correction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.divergence_slope_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.layerExponent_antitone": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.layer_alpha_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.ConcreteAnalyticBounds.layer_beta_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.reindexWord": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.reindexCode": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.reindexWord_dist": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.mem_reindexCode": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.reindexCode_close": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.reindexCode_far": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.reindexCode_exceptional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.reindexCode_distance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.reindexCode_relativeDistance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.reindexCode_rate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.gcd_extension_exponents": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.gcd_extension_field_size": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.gcd_extension_degree_le": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.gcd_base_dimension_ge": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.gcd_extension_degree_pos": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SizedExtension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sizedExtensionAlgebra": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sizedExtensionFiniteDimensional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sizedExtension_finrank": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sizedExtension_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sizedExtension_card_output_power": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_sized_field_tower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sizedExtension_finrank_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.polynomial_dimension_bound_in_exponent": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.extended_incidence_dimension_bound_in_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.extended_incidence_card_bound_in_exponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_functional_nonzero_on_family": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.independent_pairs_of_distinct_slopes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_finite_separating_syndrome": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.Point": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.pointFintype": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.CodimTwo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.Incident": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incident_iff_rep_mem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incident_mk_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceWord": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceWord_eq_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceWord_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.support_incidenceWord": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceSpan": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceWord_mem_span": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.point_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.point_card_sum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidentEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incident_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incident_inf_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.overlap_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidence_weight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.intersection_finrank_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.overlap_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.TwoSubspace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.TwoFrame": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.frame_span_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.frameInSubspaceToFrame": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.frameInSubspaceToFrame_bijective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.twoFrame_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.twoSubspace_card_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.codimTwoEquivDualTwo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.codimTwo_card_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.codimTwo_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.codimTwo_card_512_five": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.seven_overlap_lt_weight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidence_rows_independent_of_card_le_eight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceWord_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.pair_eq_of_mem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.geometric_six_rows_independent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.geometric_overlapping_pairs_impossible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.shortening_word_sparse": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.shortening_contained_in_two_incidence_rows": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.geometric_pair_impossible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.shortening_word_single": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.shortening_contained_in_one_incidence_row": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.incidence_span_distance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.codimTwo_nonempty": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidence_arithmetic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.cutoff_add_three_overlap_lt_three_weight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.four_weight_lt_six_difference": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.four_weight_le_three_cutoff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.coordinateKernel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.mem_coordinateKernel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.finrank_coordinateKernel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.coordinateKernel_inf": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleMask": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleExcluded": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleExcluded_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleExcluded_union_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleExcluded_union_three_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleSpace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleSpace_le_common_hyperplane": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.triple_common_hyperplane_finrank": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleSpace_pair_finrank": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleSpace_triple_finrank": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.tripleSpace_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.triplePoints": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.triplePoints_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.triplePoints_pair_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.triplePoints_triple_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.triplePoints_union_card_identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.triplePoints_union_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.triplePoints_union_card_lt_three_weight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.triplePoints_union_card_512_five": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.linearIndependent_of_private_coordinates": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_private_point_of_overlap_sum_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.incidence_linearIndependent_of_overlap_sum_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.exists_two_functionals_kernel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.affineCoordinate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.affineCoordinates": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.affineCoordinateSpan": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.affineCoordinates_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.one_mem_affineCoordinateSpan": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.linearFunctional_mem_affineCoordinateSpan": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.finrank_affineCoordinateSpan_pow_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.finiteField_zero_indicator": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceWord_eq_two_zero_tests": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceWord_mem_affineCoordinateSpan_pow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceSpan_finrank_le_polynomial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.extendCode_incidenceSpan": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceSpan_base_finrank_le_polynomial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.extended_incidenceSpan_finrank_le_polynomial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.prime_incidenceSpan_finrank_le_polynomial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_kernel_word_of_three_independent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.exists_small_incidence_kernel_word": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidence_kernel_distance_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.exists_incidence_kernel_word_512_five": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.embed_incidenceWord": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.incidenceWord_mem_extendCode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.exists_small_extended_incidence_kernel_word": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Geometry.extended_incidence_kernel_distance_lt_three_weight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sum_by_weight_layers": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sum_le_of_weight_layer_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.point_base_of_AD21": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.smallDistanceBase_of_AD21": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.concreteTheorem_of_AD21_Hamada": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.conditionalConcreteTheorem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.asymptoticConclusion_of_AD21": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.mainTheorem_of_AD21": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.conditionalMainTheorem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.uniqueDecodingCounterexamples_of_AD21": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.actual_unique_radius_of_AD21": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.shorteningStructure_of_AD21": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.exists_ambient_syndrome_first_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.MainTheorems.syndromeSeparation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.NumericLogCertificates.exp_interval": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.NumericLogCertificates.exp_double_interval": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_uniform_finite_samples": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sampled_row_success_fraction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_sampled_uniform_amplification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_linear_uniform_amplification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.dual_evaluation_surjective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.dual_evaluation_fibers": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.dual_evaluation_zero_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.dual_evaluation_nonzero_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SamplingRow": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sampledLinearMap": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sampled_tuple_zero_iff": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.zero_tuple_sample_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sampledDualFintype": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sampled_row_nonzero_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_bernoulli_family_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_finite_sample_family_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sampledMean": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_linear_refined_amplification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.embedWord": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.extendCode": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.supportedCode": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.coefficient_mem_base": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.extendCode_inf_supported": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.finrank_extendCode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.extendCode_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.extendCode_span": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.shortened_extendCode_le_span": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.shortened_extendCode_le_singleton": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.shortened_extendCode_le_pair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.three_sets_card_identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.three_sets_sdiff_subset_of_overlapping_pairs": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.overlapping_pairs_card_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.overlapping_pairs_impossible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sparse_representation_unique": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.three_or_four_rows_not_two": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.sparse_pair_must_overlap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_common_sparse_support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.two_sets_card_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_common_single_support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_dense_translate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_dense_subfield_line": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_dense_subfield_line_coefficients": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Far.smul_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.far_smul_nonzero_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.zero_not_mem_exceptional_of_far": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_subfield_exceptional_reduction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_monic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_eval_eq_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_natDegree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.QPowerSupport": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.natDegree_sub_le_of_top_coefficients": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.subspace_eq_of_top_two_coefficients": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.geometry_card_cast_eq_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_derivative": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_lagrange_denominator": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.sum_eval_eq_linear_coeff_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.moment": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.moment_lt_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.moment_recurrence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.moment_middle_eq_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.moment_high_eq_neg_coeff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_tail_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.moment_card_sub_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.moment_two_card_sub_qpow_sub_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_distinguished_moments": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_separable": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_coeff_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_coeff_one_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.qPolynomial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.qPolynomial_coeff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.qPolynomial_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.qPolynomial_support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.qPolynomial_natDegree_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.qEvaluation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.qEvaluation_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.basisEvaluation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.exists_nonzero_annihilator_coefficients": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_qPowerSupport": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.qPowerSupport_two_ext": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SubspacePolynomial.rootProduct_top_two_determine_subspace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_avoiding_supercode_step": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_avoiding_supercode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_avoiding_supercode_of_pow_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.hammingDist_sub_eq_norm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.close_of_equal_syndrome": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.close_of_normalized_syndrome": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.card_exceptional_ge_of_syndromes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.far_of_syndrome_exclusion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.mem_line_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.lineSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.incidence_lineSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.weightedSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.momentFunctional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.momentFunctional_incidence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.exponentZero": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.exponentOne": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.exponentTwo": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.exponents_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.syndromeMap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.syndromeMap_incidence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.affine_coefficients_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.independent_scaled_affine_pairs": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.syndromeMap_incidence_fst_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.syndromeMap_incidence_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.syndromeMap_incidence_pair_independent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.SyndromeConstruction.exists_separating_syndrome_of_tower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.hammingNorm_smul_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.syndrome_normalize": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.card_exceptional_ge_of_syndrome_slopes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.slopes_injective_of_pairwise_independent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.card_exceptional_ge_of_independent_syndromes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.baseLength": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.incidenceWeight": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.SmallDistanceBase": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.ShorteningStructure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.extendedIncidence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.SyndromeSeparation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.ConditionalMainTheorem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.ConditionalSmallDistanceBase": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.ConditionalShorteningStructure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.ConditionalConcreteTheorem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.uniqueDecoding_of_main": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.lowWeightCutoff": [
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.AD21LowWeight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.HamadaBinaryRank": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.AsymptoticConclusion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.MainTheorem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.UniqueDecodingCounterexamples": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.Targets.ConcreteTheorem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.johnson_lt_gamma": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.gamma_lt_distance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplify_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.amplify_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.johnson_lt_half_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.concrete_johnson_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.johnson_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.measure_abs_gt_le_of_subgaussian": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.measure_average_deviation_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.exists_uniform_average_concentration": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.choose_le_exp_log_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.supported_family_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.weight_layer_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.affineCodeWords": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.affineCodeWords_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.affineCodeWords_separated": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OneAndAHalfJohnson.affineCodeWords_layer_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  }
+}
