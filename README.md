@@ -5,7 +5,7 @@
 This project formalizes Kominers, Thaler, and Zheng,
 [*The One-and-a-Half Johnson Bound Is Tight for Proximity Gaps of General Linear Codes*](https://eprint.iacr.org/2026/1894).
 The downloaded source is pinned in [paper/source.json](paper/source.json).
-The repository is private at https://github.com/GUJustin/one_and_a_half_johnson.
+The repository is public at https://github.com/GUJustin/one_and_a_half_johnson.
 Validation runs locally; no CI workflow is configured.
 
 The agreed initial scope permits two external premises:

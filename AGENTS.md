@@ -1,8 +1,7 @@
 # Local conditional formalization
 
 The user requests all results of ePrint 2026/1894 formalized and has authorized
-a private GitHub repository and push. Keep the repository private and do not
-use GitHub CI. The user and Kai
+a public GitHub repository and push. Do not use GitHub CI. The user and Kai
 explicitly permit conditional results using exactly these two external inputs:
 `Targets.AD21LowWeight` and `Targets.HamadaBinaryRank`.
 
